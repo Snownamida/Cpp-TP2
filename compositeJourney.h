@@ -1,2 +1,6 @@
+#ifndef COMPOSITEJOURNEY_H_
+#define COMPOSITEJOURNEY_H_
+
 #include "journey.h"
-#include "journeys.h"
+
+#endif
