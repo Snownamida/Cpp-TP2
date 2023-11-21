@@ -1,5 +1,5 @@
-#include <cstring>
 #include "journey.h"
+#include <cstring>
 
 Journey::Journey(const char *start, const char *end)
     : _start(strdup(start)), _end(strdup(end)) {}
@@ -12,6 +12,7 @@ std::ostream &operator<<(std::ostream &os, const Journey &journey) {
 }
 
 Journey::~Journey() {
-  delete [] _start;
-  delete [] _end;
+  free((char *)_start);
+  free((char *)_end);
 }
+

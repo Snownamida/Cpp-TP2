@@ -3,4 +3,18 @@
 
 #include "journey.h"
 
+
+class SimpleJourney:public Journey {
+protected:
+  const char *_transportMethod;
+
+public:
+  SimpleJourney(const char *start = "", const char *end = "",const char *transportMethod = "");
+
+  void show(void) const;
+
+  virtual ~SimpleJourney();
+};
+
+
 #endif
