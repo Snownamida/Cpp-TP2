@@ -2,9 +2,9 @@
 #include <cstring>
 
 Journey::Journey(const char *start, const char *end)
-    : _start(strdup(start)), _end(strdup(end)) {}
+    : _from(strdup(start)), _to(strdup(end)) {}
 
-void Journey::show(void) const { std::cout << _start << " --> " << _end; }
+void Journey::show(void) const { std::cout << _from << " --> " << _to; }
 
 std::ostream &operator<<(std::ostream &os, const Journey &journey) {
   journey.show();
@@ -12,7 +12,6 @@ std::ostream &operator<<(std::ostream &os, const Journey &journey) {
 }
 
 Journey::~Journey() {
-  free((char *)_start);
-  free((char *)_end);
+  free((char *)_from);
+  free((char *)_to);
 }
-

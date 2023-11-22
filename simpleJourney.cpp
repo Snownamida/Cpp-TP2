@@ -6,7 +6,7 @@ SimpleJourney::SimpleJourney(const char *start, const char *end,
     : Journey(start, end), _transportMethod(strdup(transportMethod)) {}
 
 void SimpleJourney::show(void) const {
-  std::cout << _start << " --(" << _transportMethod << ")-> " << _end;
+  std::cout << _from << " --(" << _transportMethod << ")-> " << _to;
 }
 
 SimpleJourney::~SimpleJourney() { free((char *)_transportMethod); }

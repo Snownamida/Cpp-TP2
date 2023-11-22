@@ -2,7 +2,7 @@
 #include <iostream>
 #include <ostream>
 
-void Journeys::show() const {
+void Journeys::show(void) const {
   NodeJourney *nodeJourney = _first;
   while (nodeJourney) {
     std::cout << *nodeJourney->pjourney;
