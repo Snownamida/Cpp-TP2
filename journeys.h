@@ -4,7 +4,7 @@
 #include "journey.h"
 
 struct NodeJourney {
-  Journey *journey;
+  Journey *pjourney;
   NodeJourney *next;
 };
 
@@ -12,7 +12,7 @@ class Journeys {
 public:
   void show() const;
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
-  void add(Journey *journey);
+  void add(Journey *pjourney);
   virtual ~Journeys();
 
 protected:
