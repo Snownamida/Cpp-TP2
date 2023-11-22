@@ -12,6 +12,8 @@ public:
   int add(Journey *journey); // important:should pass a new Journey* object,
                              // CompositeJourney will make the GC for it
   virtual void show(void) const;
+
+  // we need to redifine << here because it exist in both Journey and Journeys
   friend std::ostream &operator<<(std::ostream &os,
                                   const CompositeJourney &compositeJourney);
 };

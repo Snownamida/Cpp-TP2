@@ -4,7 +4,11 @@
 
 void Journeys::show(const char sep) const {
   NodeJourney *nodeJourney = _first;
+  unsigned int i = 0;
   while (nodeJourney) {
+    i++;
+    if (sep == '\n')
+      std::cout << i << '.';
     std::cout << *nodeJourney->pjourney;
     nodeJourney = nodeJourney->next;
     if (nodeJourney)
