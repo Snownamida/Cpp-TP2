@@ -1,7 +1,9 @@
 #ifndef JOURNEY_H_
 #define JOURNEY_H_
 
+#include <cstring>
 #include <iostream>
+
 
 class Journey {
 protected:

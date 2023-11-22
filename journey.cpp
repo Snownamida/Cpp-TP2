@@ -1,5 +1,4 @@
 #include "journey.h"
-#include <cstring>
 
 Journey::Journey(const char *start, const char *end)
     : _from(strdup(start)), _to(strdup(end)) {}

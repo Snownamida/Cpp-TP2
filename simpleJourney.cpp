@@ -1,5 +1,4 @@
 #include "simpleJourney.h"
-#include <cstring>
 
 SimpleJourney::SimpleJourney(const char *start, const char *end,
                              const char *transportMethod)
