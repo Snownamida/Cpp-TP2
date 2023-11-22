@@ -1,9 +1,11 @@
+#include "catalog.h"
 #include "compositeJourney.h"
 #include "journey.h"
 #include "journeys.h"
 #include "simpleJourney.h"
 #include <cstring>
 #include <iostream>
+
 
 using namespace std;
 
@@ -53,14 +55,27 @@ int main() {
   cout << "===========Test CompositeJourney Start===========" << endl;
 
   CompositeJourney compositeJourney;
-  cout << compositeJourney<< endl;
+  cout << compositeJourney << endl;
   compositeJourney.add(new SimpleJourney("Guangzhou", "Shenzhen", "bus"));
-  cout << compositeJourney<< endl;
+  cout << compositeJourney << endl;
   compositeJourney.add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
-  cout << compositeJourney<< endl;
+  cout << compositeJourney << endl;
   compositeJourney.add(new SimpleJourney("Macao", "Taiwan", "boat"));
-  cout << compositeJourney<< endl;
+  cout << compositeJourney << endl;
   cout << "===========Test CompositeJourney End===========" << endl;
+  cout << endl << endl;
+
+  cout << "===========Test Catalog Start===========" << endl;
+
+  Catalog catalog;
+  cout << catalog << endl << endl;
+  catalog.add(new SimpleJourney("Guangzhou", "Shenzhen", "bus"));
+  cout << catalog << endl << endl;
+  catalog.add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
+  cout << catalog << endl << endl;
+  catalog.add(new SimpleJourney("Macao", "Taiwan", "boat"));
+  cout << catalog << endl << endl;
+  cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;
 
   return 0;

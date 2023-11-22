@@ -4,7 +4,6 @@
 #include <cstring>
 #include <iostream>
 
-
 class Journey {
 protected:
   const char *_from;

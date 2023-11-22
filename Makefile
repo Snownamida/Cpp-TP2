@@ -1,5 +1,5 @@
-testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o
-	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o -o testJourney
+testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
+	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o testJourney
 
 testJourney.o: testJourney.cpp
 	c++ -g -c testJourney.cpp -o testJourney.o
@@ -15,6 +15,9 @@ compositeJourney.o: compositeJourney.cpp compositeJourney.h
 
 journeys.o: journeys.cpp journeys.h
 	c++ -g -c journeys.cpp -o journeys.o
+	
+catalog.o: catalog.cpp catalog.h
+	c++ -g -c catalog.cpp -o catalog.o
 
 clean:
 	rm *.o testJourney

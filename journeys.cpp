@@ -2,13 +2,13 @@
 #include <iostream>
 #include <ostream>
 
-void Journeys::show(void) const {
+void Journeys::show(const char sep) const {
   NodeJourney *nodeJourney = _first;
   while (nodeJourney) {
     std::cout << *nodeJourney->pjourney;
     nodeJourney = nodeJourney->next;
     if (nodeJourney)
-      std::cout << " | ";
+      std::cout << sep;
   }
 }
 
