@@ -12,7 +12,8 @@ class Journeys {
 public:
   void show() const;
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
-  void add(Journey *pjourney);
+  void add(Journey *pjourney); // important:should pass a new Journey* object,
+                               // Journeys will make the GC for it
   virtual ~Journeys();
 
 protected:
