@@ -11,7 +11,7 @@ public:
   // -1 _to of the last journey != _from of the journey to add
   int add(Journey *journey); // important:should pass a new Journey* object,
                              // CompositeJourney will make the GC for it
-
+  virtual void show(void) const;
   friend std::ostream &operator<<(std::ostream &os,
                                   const CompositeJourney &compositeJourney);
 };

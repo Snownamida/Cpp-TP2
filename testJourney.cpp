@@ -6,7 +6,6 @@
 #include <cstring>
 #include <iostream>
 
-
 using namespace std;
 
 int main() {
@@ -62,6 +61,7 @@ int main() {
   cout << compositeJourney << endl;
   compositeJourney.add(new SimpleJourney("Macao", "Taiwan", "boat"));
   cout << compositeJourney << endl;
+
   cout << "===========Test CompositeJourney End===========" << endl;
   cout << endl << endl;
 
@@ -69,12 +69,20 @@ int main() {
 
   Catalog catalog;
   cout << catalog << endl << endl;
-  catalog.add(new SimpleJourney("Guangzhou", "Shenzhen", "bus"));
+  catalog.add(new Journey("Guangzhou", "Shenzhen"));
   cout << catalog << endl << endl;
   catalog.add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
   cout << catalog << endl << endl;
+  CompositeJourney *pcompositeJourney = new CompositeJourney;
+  pcompositeJourney->add(new SimpleJourney("Wuhan", "Xiamen", "train"));
+  pcompositeJourney->add(new SimpleJourney("Xiamen", "Fuzhou", "metro"));
+
+  catalog.add(pcompositeJourney);
+  cout << catalog << endl << endl;
+
   catalog.add(new SimpleJourney("Macao", "Taiwan", "boat"));
   cout << catalog << endl << endl;
+
   cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;
 
