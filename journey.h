@@ -9,10 +9,11 @@ protected:
   const char *_from;
   const char *_to;
 
+private:
+  virtual void show(void) const;
+
 public:
   Journey(const char *start = "", const char *end = "");
-
-  virtual void show(void) const;
 
   const char *getFrom(void) const { return _from; }
   const char *getTo(void) const { return _to; }
