@@ -13,7 +13,8 @@ private:
   virtual void show(void) const;
 
 public:
-  Journey(const char *start = "", const char *end = "");
+  Journey(const char *start = "", const char *end = "")
+      : _from(strdup(start)), _to(strdup(end)) {}
 
   const char *getFrom(void) const { return _from; }
   const char *getTo(void) const { return _to; }
