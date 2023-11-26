@@ -88,6 +88,7 @@ int main() {
   catalog.add(new Journey("Guangzhou", "Macao"));
   catalog.add(new Journey("Honkong", "Wuhan"));
   catalog.add(new Journey("Taiwan", "Wuhan"));
+  catalog.add(new Journey("Macao", "Wuhan"));
   cout << catalog << endl << endl;
   cout << catalog << endl << endl;
 

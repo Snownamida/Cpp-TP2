@@ -32,7 +32,19 @@ void Catalog::search(const char *const from, const char *const to,
 
   for (auto nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
        nodeJourney = nodeJourney->next) {
+
     if (!strcmp(nodeJourney->pdata->getFrom(), from)) {
+
+      auto checkPathNode = pathNode;
+      bool alreadyUsed = false;
+      while (checkPathNode && checkPathNode->pjourney) {
+        if (checkPathNode->pjourney == nodeJourney->pdata)
+          alreadyUsed = true;
+        checkPathNode = checkPathNode->lastPathNode;
+      }
+      if (alreadyUsed)
+        continue;
+
       auto nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
       pathNode->nextPathNodes.add(nextPathNode);
       search(nodeJourney->pdata->getTo(), to, nextPathNode);
