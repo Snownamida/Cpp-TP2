@@ -14,7 +14,7 @@ class Catalog : public Journeys {
 protected:
 public:
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
-  PathNode *search(const char *from, const char *to,
+  PathNode *search(const char *const from, const char *const to,
                    PathNode *pathHead = nullptr);
 };
 

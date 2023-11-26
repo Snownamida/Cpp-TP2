@@ -7,37 +7,34 @@ std::ostream &operator<<(std::ostream &os, const Catalog &catalog) {
   return os;
 }
 
-PathNode *Catalog::search(const char *from, const char *to,
+PathNode *Catalog::search(const char *const from, const char *const to,
                           PathNode *pathNode) {
   if (!strcmp(from, to)) {
-    // LinkedList<Journey> path;
-    // auto currentPathHead = &pathNode;
-    // while (currentPathHead) {
+    LinkedList<Journey> path;
 
-    //   std::cout << *(currentPathHead->pjourney) << std::endl;
-    //   path.add(currentPathHead->pjourney, false);
-    //   currentPathHead = currentPathHead->plastPathNode;
-    // }
+    while (pathNode->pjourney) {
+      path.add(pathNode->pjourney, false);
+      pathNode = pathNode->lastPathNode;
+    }
 
-    // auto nodeJourney = path.getFirst();
-    // while (nodeJourney) {
-    //   std::cout << *(nodeJourney->pdata) << std::endl;
-    //   nodeJourney = nodeJourney->next;
-    // }
+    for (auto nodeJourney = path.getFirst(); nodeJourney;
+         nodeJourney = nodeJourney->next) {
+      std::cout << *(nodeJourney->pdata) << std::endl;
+    }
 
+    std::cout << std::endl;
     return nullptr;
   }
   if (!pathNode)
     pathNode = new PathNode{nullptr, nullptr};
 
-  auto nodeJourney = journeyLinkedList.getFirst();
-  while (nodeJourney) {
+  for (auto nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
+       nodeJourney = nodeJourney->next) {
     if (!strcmp(nodeJourney->pdata->getFrom(), from)) {
-      auto subNode = new PathNode{nodeJourney->pdata, pathNode};
-      pathNode->nextPathNodes.add(subNode);
-      search(nodeJourney->pdata->getTo(), to, subNode);
+      auto nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
+      pathNode->nextPathNodes.add(nextPathNode);
+      search(nodeJourney->pdata->getTo(), to, nextPathNode);
     }
-    nodeJourney = nodeJourney->next;
   }
 
   // std::cout << *(pathHead.pathNodes.getFirst()->pdata->pjourney);
