@@ -3,7 +3,7 @@
 #include <cstring>
 
 int CompositeJourney::add(Journey *pjourney) {
-  if (!_first) {
+  if (!journeyLinkedList.getFirst()) {
     Journeys::add(pjourney);
     free((char *)_from);
     free((char *)_to);
@@ -12,7 +12,8 @@ int CompositeJourney::add(Journey *pjourney) {
     return 0;
   }
 
-  if (std::strcmp(_last->pjourney->getTo(), pjourney->getFrom())) {
+  if (std::strcmp(journeyLinkedList.getLast()->pdata->getTo(),
+                  pjourney->getFrom())) {
     delete pjourney;
     return -1;
   }
