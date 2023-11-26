@@ -83,6 +83,15 @@ int main() {
   catalog.add(new SimpleJourney("Macao", "Taiwan", "boat"));
   cout << catalog << endl << endl;
 
+  catalog.add(new Journey("Shenzhen", "Macao"));
+  catalog.add(new Journey("Fuzhou", "Macao"));
+  catalog.add(new Journey("Guangzhou", "Macao"));
+  catalog.add(new Journey("Honkong", "Wuhan"));
+  cout << catalog << endl << endl;
+  cout << catalog << endl << endl;
+
+  catalog.search("Guangzhou", "Taiwan");
+
   cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;
 
