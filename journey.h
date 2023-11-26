@@ -13,6 +13,7 @@ private:
   virtual void show(void) const;
 
 public:
+  unsigned int refCount = 0;
   Journey(const char *start = "", const char *end = "")
       : _from(strdup(start)), _to(strdup(end)) {}
 
