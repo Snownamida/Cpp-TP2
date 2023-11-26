@@ -11,9 +11,10 @@ public:
   // important:should pass a new Journey* object,
   // Journeys will make the GC for it
   void add(Journey *pjourney) { journeyLinkedList.add(pjourney); }
+  unsigned int refCount = 0;
 
 protected:
-  LinkedList<Journey, Journey> journeyLinkedList;
+  LinkedList<Journey> journeyLinkedList;
   void show(const char sep = '|') const;
 };
 

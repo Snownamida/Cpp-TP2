@@ -1,5 +1,4 @@
 #include "catalog.h"
-#include "compositeJourney.h"
 #include <cstring>
 #include <ostream>
 
@@ -8,15 +7,19 @@ std::ostream &operator<<(std::ostream &os, const Catalog &catalog) {
   return os;
 }
 
-void Catalog::search(const char *from, const char *to) {
-  CompositeJourney path;
+void Catalog::search(const char *from, const char *to, PathNode pathHead) {
 
-  auto node = journeyLinkedList.getFirst();
-  while (node) {
-    if (!strcmp(node->pdata->getFrom(), from)) {
-      path.add(node->pdata, false);
+  auto journeyNode = journeyLinkedList.getFirst();
+  while (journeyNode) {
+    if (!strcmp(journeyNode->pdata->getFrom(), from)) {
+      std::cout << *(journeyNode->pdata) << std::endl;
+      ;
+      auto subNode = new PathNode{journeyNode->pdata, pathHead.pjourney};
+      pathHead.pathNodes.add(subNode);
+      search(journeyNode->pdata->getTo(), to, *subNode);
     }
-    node = node->next;
+    journeyNode = journeyNode->next;
   }
-      std::cout << path << std::endl;
+
+  // std::cout << *(pathHead.pathNodes.getFirst()->pdata->pjourney);
 }
