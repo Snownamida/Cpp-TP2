@@ -16,15 +16,15 @@ public:
       delete _last;
     }
   }
-
+  // important:should pass a new Journey* object,
+  // LinkedList will make the GC for it
   void add(T *pdata) {
     Node<T> *node = new Node<T>{pdata, nullptr};
     if (!_first)
       _first = _last = node;
     else
       _last = _last->next = node;
-  } // important:should pass a new Journey* object,
-    // LinkedList will make the GC for it
+  }
 
   Node<T> *getFirst(void) const { return _first; }
   Node<T> *getLast(void) const { return _last; }

@@ -1,5 +1,5 @@
-testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o linkedList.o
-	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o linkedList.o -o testJourney
+testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
+	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o testJourney
 
 testJourney.o: testJourney.cpp
 	c++ -g -c testJourney.cpp -o testJourney.o
@@ -12,9 +12,6 @@ simpleJourney.o: simpleJourney.cpp simpleJourney.h
 
 compositeJourney.o: compositeJourney.cpp compositeJourney.h
 	c++ -g -c compositeJourney.cpp -o compositeJourney.o
-
-linkedList.o: linkedList.cpp linkedList.h
-	c++ -g -c linkedList.cpp -o linkedList.o
 
 journeys.o: journeys.cpp journeys.h
 	c++ -g -c journeys.cpp -o journeys.o
