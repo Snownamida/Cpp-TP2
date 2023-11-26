@@ -7,12 +7,12 @@ std::ostream &operator<<(std::ostream &os, const Catalog &catalog) {
   return os;
 }
 
-PathNode *Catalog::search(const char *const from, const char *const to,
-                          PathNode *pathNode) {
+void Catalog::search(const char *const from, const char *const to,
+                     PathNode *pathNode) {
   if (!strcmp(from, to)) {
     LinkedList<Journey> path;
 
-    while (pathNode->pjourney) {
+    while (pathNode && pathNode->pjourney) {
       path.add(pathNode->pjourney, false);
       pathNode = pathNode->lastPathNode;
     }
@@ -23,10 +23,12 @@ PathNode *Catalog::search(const char *const from, const char *const to,
     }
 
     std::cout << std::endl;
-    return nullptr;
+    return;
   }
-  if (!pathNode)
-    pathNode = new PathNode{nullptr, nullptr};
+
+  if (!pathNode) {
+    pathNode = &pathRoot;
+  }
 
   for (auto nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
        nodeJourney = nodeJourney->next) {
@@ -36,7 +38,4 @@ PathNode *Catalog::search(const char *const from, const char *const to,
       search(nodeJourney->pdata->getTo(), to, nextPathNode);
     }
   }
-
-  // std::cout << *(pathHead.pathNodes.getFirst()->pdata->pjourney);
-  return pathNode;
 }

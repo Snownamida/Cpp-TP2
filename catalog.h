@@ -12,10 +12,12 @@ struct PathNode {
 
 class Catalog : public Journeys {
 protected:
+  PathNode pathRoot{nullptr, nullptr};
+
 public:
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
-  PathNode *search(const char *const from, const char *const to,
-                   PathNode *pathHead = nullptr);
+  void search(const char *const from, const char *const to,
+              PathNode *pathHead = nullptr);
 };
 
 #endif

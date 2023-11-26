@@ -91,7 +91,7 @@ int main() {
   cout << catalog << endl << endl;
   cout << catalog << endl << endl;
 
-  delete catalog.search("Guangzhou", "Taiwan");
+  catalog.search("Guangzhou", "Taiwan");
 
   cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;
