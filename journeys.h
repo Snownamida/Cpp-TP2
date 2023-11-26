@@ -13,7 +13,7 @@ public:
   void add(Journey *pjourney) { journeyLinkedList.add(pjourney); }
 
 protected:
-  LinkedList<Journey> journeyLinkedList;
+  LinkedList<Journey, Journey> journeyLinkedList;
   void show(const char sep = '|') const;
 };
 

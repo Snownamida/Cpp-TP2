@@ -3,7 +3,7 @@
 #include <ostream>
 
 void Journeys::show(const char sep) const {
-  Node<Journey> *nodeJourney = journeyLinkedList.getFirst();
+  Node<Journey, Journey> *nodeJourney = journeyLinkedList.getFirst();
 
   for (unsigned int i = 1; nodeJourney; i++) {
     if (sep == '\n')
