@@ -1,6 +1,13 @@
+trajets: trajets.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
+	c++ -g trajets.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o trajets
+
 testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
 	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o testJourney
 
+
+trajets.o: main.cpp
+	c++ -g -c main.cpp -o trajets.o
+	
 testJourney.o: testJourney.cpp
 	c++ -g -c testJourney.cpp -o testJourney.o
 
@@ -20,4 +27,4 @@ catalog.o: catalog.cpp catalog.h
 	c++ -g -c catalog.cpp -o catalog.o
 
 clean:
-	rm *.o testJourney
+	rm *.o testJourney trajets

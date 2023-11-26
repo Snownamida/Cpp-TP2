@@ -93,6 +93,10 @@ int main() {
   cout << catalog << endl << endl;
 
   catalog.search("Guangzhou", "Taiwan");
+  cout << endl << endl;
+  catalog.search("Honkong", "Macao");
+  cout << "endl" << endl;
+  catalog.search("Honkong", "Maao");
 
   cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;
