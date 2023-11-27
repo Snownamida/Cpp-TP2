@@ -4,7 +4,8 @@
 #include "journey.h"
 #include "journeys.h"
 
-class CompositeJourney : public Journey, public Journeys {
+class CompositeJourney : public Journey, public Journeys
+{
 public:
   // return value
   // 0  OK

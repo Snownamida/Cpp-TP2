@@ -6,12 +6,15 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
-  cout << "\n   ______      __        __           \n  / ____/___ _/ /_____ _/ /___  ____ _\n / /   / __ `/ __/ __ `/ / __ \\/ __ `/\n/ /___/ /_/ / /_/ /_/ / / /_/ / /_/ / \n\\____/\\__,_/\\__/\\__,_/_/\\____/\\__, /  \n                             /____/   \n" << endl; // Just an ASCII art.
+  cout << "\n   ______      __        __           \n  / ____/___ _/ /_____ _/ /___  ____ _\n / /   / __ `/ __/ __ `/ / __ \\/ __ `/\n/ /___/ /_/ / /_/ /_/ / / /_/ / /_/ / \n\\____/\\__,_/\\__/\\__,_/_/\\____/\\__, /  \n                             /____/   \n"
+       << endl; // Just an ASCII art.
   Catalog catalog;
 
-  while (true) {
+  while (true)
+  {
     cout << "------- Select an action number: -------" << endl;
     cout << " ______________________________________ " << endl;
     cout << "|                                      |" << endl;
@@ -27,29 +30,31 @@ int main() {
 
     char start[100], end[100], transportMethod[100];
 
-    switch (actionNumber) {
+    switch (actionNumber)
+    {
 
     case '1':
 
-        cout << "start: ";
-        cin >> start;
+      cout << "start: ";
+      cin >> start;
 
-        cout << "end: ";
-        cin >> end;
+      cout << "end: ";
+      cin >> end;
 
-        cout << "transportMethod: ";
-        cin >> transportMethod;
+      cout << "transportMethod: ";
+      cin >> transportMethod;
 
         catalog.Add(new SimpleJourney(start, end, transportMethod));
         cout << endl;
         break;
 
-    case '2': 
-    {                           
-        cout << "Insert the Composite Journey step by step." << endl;
-        CompositeJourney *pcompositeJourney = new CompositeJourney;
+    case '2':
+    {
+      cout << "Insert the Composite Journey step by step." << endl;
+      CompositeJourney *pcompositeJourney = new CompositeJourney;
 
-        do {
+      do
+      {
 
         cout << "start: ";
         cin >> start;
@@ -66,12 +71,12 @@ int main() {
         cout << "Would you like to input another segment of the journey? (y/n) :";
         cin >> start;
 
-        } while (start[0] == 'Y' || start[0] == 'y');
+      } while (start[0] == 'Y' || start[0] == 'y');
 
         catalog.Add(pcompositeJourney);
     }
-        cout << endl;
-        break;
+      cout << endl;
+      break;
 
     case '3':
 
@@ -89,7 +94,8 @@ int main() {
 
       catalog.Search(start, end);
 
-      cout << endl << endl;
+      cout << endl
+           << endl;
       break;
 
     case '5':
@@ -99,7 +105,6 @@ int main() {
     default:
 
       cout << "Error: Please select a correct number." << endl;
-
     }
   }
   return 0;

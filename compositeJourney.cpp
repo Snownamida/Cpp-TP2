@@ -12,8 +12,8 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
     return 0;
   }
 
-  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->GetTo(),
-                           pjourney->GetFrom())) {
+  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->getTo(),
+                           pjourney->getFrom())) {
     delete pjourney;
     return -1;
   }
@@ -25,8 +25,8 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
 
 void CompositeJourney::show(void) const { Journeys::show(); };
 
-std::ostream &operator<<(std::ostream &os,
-                         const CompositeJourney &compositeJourney) {
+std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney)
+{
   compositeJourney.show();
   return os;
 }

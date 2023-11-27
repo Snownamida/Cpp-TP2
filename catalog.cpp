@@ -17,26 +17,27 @@ using std::cout;
 using std::endl;
 using std::ostream;
 
-//------------------------------------------------------ Include personnel
-#include "catalog.h"
-
-//----------------------------------------------------------------- PUBLIC
-
-//----------------------------------------------------- Méthodes publiques
-void Catalog::Search(const char *const from, const char *const to, PathNode *pathNode) 
+std::ostream &operator<<(std::ostream &os, const Catalog &catalog)
 {
-  if (!strcmp(from, to)) {
+  catalog.show('\n');
+  return os;
+}
 
+void Catalog::Search(const char *const from, const char *const to,
+                     PathNode *pathNode)
+{
+  if (!strcmp(from, to))
+  {
     LinkedList<Journey> path;
 
-    while (pathNode && pathNode->pjourney) {
-
-      path.Add(pathNode->pjourney, false);
+    while (pathNode && pathNode->pjourney)
+    {
+      path.add(pathNode->pjourney, false);
       pathNode = pathNode->lastPathNode;
 
     }
 
-    for (Node<Journey> *nodeJourney = path.getFirst(); nodeJourney;nodeJourney = nodeJourney->next) {
+    for (Node<Journey> *nodeJourney = path.GetFirst(); nodeJourney;nodeJourney = nodeJourney->next) {
 
       cout << *(nodeJourney->pdata) << endl;
 
@@ -46,13 +47,12 @@ void Catalog::Search(const char *const from, const char *const to, PathNode *pat
     return;
   }
 
-  if (!pathNode) {
-
+  if (!pathNode)
+  {
     pathNode = &pathRoot;
-
   }
 
-  for (Node<Journey> *nodeJourney = journeyLinkedList.getFirst(); nodeJourney; nodeJourney = nodeJourney->next) {
+  for (Node<Journey> *nodeJourney = journeyLinkedList.GetFirst(); nodeJourney; nodeJourney = nodeJourney->next) {
 
     if (!strcmp(nodeJourney->pdata->GetFrom(), from)) {
 

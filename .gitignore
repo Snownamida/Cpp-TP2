@@ -1,3 +1,4 @@
 *.o
 trajets
+test
 .vscode/settings.json
