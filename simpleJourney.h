@@ -12,19 +12,16 @@
 #define SIMPLEJOURNEY_H_
 
 //--------------------------------------------------- Interfaces utilisées
-
 #include "journey.h"
 
 
-class SimpleJourney : public Journey {
-
+class SimpleJourney : public Journey 
+{
 //----------------------------------------------------------------- PUBLIC
-
 
 public:
 
 //-------------------------------------------- Constructeurs - destructeur
-
   SimpleJourney(const char *start = "", const char *end = "", const char *transportMethod = "");
 
   virtual ~SimpleJourney();

@@ -1,12 +1,12 @@
 /*************************************************************************
-                           SimpleJourney  -  description
+                           simpleJourney  -  description
                              -------------------
     début                : 27/11/2023
     copyright            : (C) 2023 par Jixiang, Adam, Clément, Louis
     binome               : B3311 et B3309
 *************************************************************************/
 
-//- Réalisation de la classe <SimpleJourney> (fichier SimpleJourney.cpp) -
+//- Réalisation de la classe <simpleJourney> (fichier simpleJourney.cpp) -
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -19,9 +19,8 @@
 
 void SimpleJourney::show(void) const
 {
-
   std::cout << _from << " --(" << _transportMethod << ")-> " << _to;
-}
+} //----- Fin de show
 
 //-------------------------------------------- Constructeurs - destructeur
 
