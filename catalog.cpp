@@ -17,12 +17,10 @@ using std::cout;
 using std::endl;
 using std::ostream;
 
-std::ostream &operator<<(std::ostream &os, const Catalog &catalog)
-{
-  catalog.show('\n');
-  return os;
-}
+//------------------------------------------------------ Include personnel
+#include "catalog.h"
 
+//----------------------------------------------------- Méthodes publiques
 void Catalog::Search(const char *const from, const char *const to,
                      PathNode *pathNode)
 {
@@ -32,7 +30,7 @@ void Catalog::Search(const char *const from, const char *const to,
 
     while (pathNode && pathNode->pjourney)
     {
-      path.add(pathNode->pjourney, false);
+      path.Add(pathNode->pjourney, false);
       pathNode = pathNode->lastPathNode;
 
     }

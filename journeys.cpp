@@ -3,7 +3,7 @@
 
 void Journeys::show(const char sep) const
 {
-  Node<Journey> *nodeJourney = journeyLinkedList.getFirst();
+  Node<Journey> *nodeJourney = journeyLinkedList.GetFirst();
 
   for (unsigned int i = 1; nodeJourney; i++)
   {
