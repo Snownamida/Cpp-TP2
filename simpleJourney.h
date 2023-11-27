@@ -15,9 +15,11 @@
 
 #include "journey.h"
 
+
 class SimpleJourney : public Journey {
 
 //----------------------------------------------------------------- PUBLIC
+
 
 public:
 

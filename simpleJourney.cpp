@@ -16,7 +16,10 @@
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void SimpleJourney::show(void) const {
+
+void SimpleJourney::show(void) const
+{
+
   std::cout << _from << " --(" << _transportMethod << ")-> " << _to;
 }
 

@@ -1,30 +1,29 @@
-trajets: trajets.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
-	c++ -g trajets.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o trajets
+CC = g++ # c++
+CFLAGS = -ansi -pedantic -Wall -std=c++11 -g #  
+TARGET = trajets
+SRCS = main.cpp journey.cpp simpleJourney.cpp journeys.cpp compositeJourney.cpp catalog.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-testJourney: testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o
-	c++ -g testJourney.o journey.o simpleJourney.o journeys.o compositeJourney.o catalog.o -o testJourney
+TEST = test
+TESTSRCS = test.cpp journey.cpp simpleJourney.cpp journeys.cpp compositeJourney.cpp catalog.cpp
+TESTOBJS = $(TESTSRCS:.cpp=.o)
 
 
-trajets.o: main.cpp
-	c++ -g -c main.cpp -o trajets.o
-	
-testJourney.o: testJourney.cpp
-	c++ -g -c testJourney.cpp -o testJourney.o
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-journey.o: journey.cpp journey.h
-	c++ -g -c journey.cpp -o journey.o
+$(TEST): $(TESTOBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-simpleJourney.o: simpleJourney.cpp simpleJourney.h
-	c++ -g -c simpleJourney.cpp -o simpleJourney.o
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
 
-compositeJourney.o: compositeJourney.cpp compositeJourney.h
-	c++ -g -c compositeJourney.cpp -o compositeJourney.o
+journey.o: journey.h
+simpleJourney.o: simpleJourney.h
+compositeJourney.o: compositeJourney.h
+journeys.o: journeys.h
+catalog.o: catalog.h
 
-journeys.o: journeys.cpp journeys.h
-	c++ -g -c journeys.cpp -o journeys.o
-	
-catalog.o: catalog.cpp catalog.h
-	c++ -g -c catalog.cpp -o catalog.o
-
+.PHONY: clean
 clean:
-	rm *.o testJourney trajets
+	rm -f *.o $(TARGET) $(TEST)
