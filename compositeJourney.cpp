@@ -2,8 +2,10 @@
 #include <cstdlib>
 #include <cstring>
 
-int CompositeJourney::add(Journey *pjourney, bool check) {
-  if (!journeyLinkedList.getFirst()) {
+int CompositeJourney::add(Journey *pjourney, bool check)
+{
+  if (!journeyLinkedList.getFirst())
+  {
     Journeys::add(pjourney);
     free((char *)_from);
     free((char *)_to);
@@ -12,8 +14,8 @@ int CompositeJourney::add(Journey *pjourney, bool check) {
     return 0;
   }
 
-  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->getTo(),
-                           pjourney->getFrom())) {
+  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->getTo(), pjourney->getFrom()))
+  {
     delete pjourney;
     return -1;
   }
@@ -25,8 +27,8 @@ int CompositeJourney::add(Journey *pjourney, bool check) {
 
 void CompositeJourney::show(void) const { Journeys::show(); };
 
-std::ostream &operator<<(std::ostream &os,
-                         const CompositeJourney &compositeJourney) {
+std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney)
+{
   compositeJourney.show();
   return os;
 }

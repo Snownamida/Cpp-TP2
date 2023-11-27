@@ -4,7 +4,8 @@
 #include <cstring>
 #include <iostream>
 
-class Journey {
+class Journey
+{
 protected:
   const char *_from;
   const char *_to;

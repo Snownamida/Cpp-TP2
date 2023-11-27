@@ -3,14 +3,16 @@
 
 #include "journeys.h"
 
-struct PathNode {
+struct PathNode
+{
   Journey *pjourney;
   PathNode *lastPathNode;
   LinkedList<PathNode> nextPathNodes;
   unsigned int refCount = 0;
 };
 
-class Catalog : public Journeys {
+class Catalog : public Journeys
+{
 protected:
   PathNode pathRoot{nullptr, nullptr};
 

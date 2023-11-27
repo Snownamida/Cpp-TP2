@@ -3,7 +3,8 @@
 
 #include "journey.h"
 
-class SimpleJourney : public Journey {
+class SimpleJourney : public Journey
+{
 protected:
   const char *_transportMethod;
 

@@ -4,7 +4,8 @@
 #include "journey.h"
 #include "linkedList.h"
 
-class Journeys {
+class Journeys
+{
 public:
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
 

@@ -6,9 +6,11 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
   Catalog catalog;
-  while (true) {
+  while (true)
+  {
     cout << "Select an action number:" << endl;
     cout << "1. Insert a Simple Journey" << endl;
     cout << "2. Insert a Composite Journey" << endl;
@@ -20,7 +22,8 @@ int main() {
     cin >> actionNumber;
 
     char start[100], end[100], transportMethod[100];
-    switch (actionNumber) {
+    switch (actionNumber)
+    {
     case '1':
 
       cout << "start: ";
@@ -35,9 +38,11 @@ int main() {
       catalog.add(new SimpleJourney(start, end, transportMethod));
       cout << endl;
       break;
-    case '2': {
+    case '2':
+    {
       CompositeJourney *pcompositeJourney = new CompositeJourney;
-      do {
+      do
+      {
 
         cout << "start: ";
         cin >> start;
@@ -70,7 +75,8 @@ int main() {
       cout << "end: ";
       cin >> end;
       catalog.search(start, end);
-      cout << endl << endl;
+      cout << endl
+           << endl;
       break;
     case '5':
       return 0;
