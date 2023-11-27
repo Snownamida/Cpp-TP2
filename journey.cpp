@@ -8,6 +8,7 @@ std::ostream &operator<<(std::ostream &os, const Journey &journey) {
 }
 
 Journey::~Journey() {
+  //Using free instead of delete because the string was created with strdup(), which require a free
   free((char *)_from);
   free((char *)_to);
 }

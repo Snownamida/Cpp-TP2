@@ -8,4 +8,5 @@ void SimpleJourney::show(void) const {
   std::cout << _from << " --(" << _transportMethod << ")-> " << _to;
 }
 
+//Using free instead of delete because the string was created with strdup(), which require a free
 SimpleJourney::~SimpleJourney() { free((char *)_transportMethod); }

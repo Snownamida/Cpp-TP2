@@ -5,7 +5,8 @@
 int CompositeJourney::add(Journey *pjourney, bool check) {
   if (!journeyLinkedList.getFirst()) {
     Journeys::add(pjourney);
-    free((char *)_from);
+    //Using free instead of delete because the string was created with strdup(), which require a free
+    free((char *)_from); 
     free((char *)_to);
     _from = strdup(pjourney->getFrom());
     _to = strdup(pjourney->getTo());
@@ -18,6 +19,7 @@ int CompositeJourney::add(Journey *pjourney, bool check) {
     return -1;
   }
   Journeys::add(pjourney);
+  //Using free instead of delete because the string was created with strdup(), which require a free
   free((char *)_to);
   _to = strdup(pjourney->getTo());
   return 0;
