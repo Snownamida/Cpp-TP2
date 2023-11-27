@@ -15,17 +15,18 @@ int main()
 
   while (true)
   {
-    cout << "------- Select an action number: -------" << endl;
+    cout << "------- Select an action number --------" << endl;
     cout << " ______________________________________ " << endl;
     cout << "|                                      |" << endl;
     cout << "| Insert a Simple Journey............1 |" << endl;
     cout << "| Insert a Composite Journey.........2 |" << endl;
-    cout << "| show catalog.......................3 |" << endl;
+    cout << "| Show catalog.......................3 |" << endl;
     cout << "| Search path........................4 |" << endl;
     cout << "| Quit...............................5 |" << endl;
-    cout << "|______________________________________|" << endl;
+    cout << "|______________________________________|\n" << endl;
 
     char actionNumber;
+    cout << ">     Input : ";
     cin >> actionNumber;
 
     char start[100], end[100], transportMethod[100];
@@ -35,13 +36,13 @@ int main()
 
     case '1':
 
-      cout << "start: ";
+      cout << "\n>     Start : ";
       cin >> start;
 
-      cout << "end: ";
+      cout << ">       End : ";
       cin >> end;
 
-      cout << "transportMethod: ";
+      cout << "> Transport : ";
       cin >> transportMethod;
 
         catalog.Add(new SimpleJourney(start, end, transportMethod));
@@ -50,25 +51,24 @@ int main()
 
     case '2':
     {
-      cout << "Insert the Composite Journey step by step." << endl;
+      cout << "\nInsert the Composite Journey step by step." << endl;
       CompositeJourney *pcompositeJourney = new CompositeJourney;
 
       do
       {
 
-        cout << "start: ";
+        cout << "\n>     Start : ";
         cin >> start;
 
-        cout << "end: ";
+        cout << ">       End : ";
         cin >> end;
 
-        cout << "transportMethod: ";
+        cout << "> Transport : ";
         cin >> transportMethod;
 
         pcompositeJourney->Add(new SimpleJourney(start, end, transportMethod));
 
-        cout << endl;
-        cout << "Would you like to input another segment of the journey? (y/n) :";
+        cout << "\nWould you like to input another segment of the journey? (y/n) : ";
         cin >> start;
 
       } while (start[0] == 'Y' || start[0] == 'y');
@@ -80,22 +80,23 @@ int main()
 
     case '3':
 
+      cout << "\n =----------------Catalog----------------= \n"
       cout << catalog << endl;
-      cout << endl;
+      cout << "\n =---------------------------------------= \n"
       break;
 
     case '4':
 
-      cout << "start: ";
+      cout << "\n>     Start : ";
       cin >> start;
 
-      cout << "end: ";
+      cout << ">       End : ";
       cin >> end;
 
+      cout << "\nResult : \n";
       catalog.Search(start, end);
 
-      cout << endl
-           << endl;
+      cout << endl;
       break;
 
     case '5':
