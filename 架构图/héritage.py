@@ -70,20 +70,20 @@ for i in ['friend std::ostream &operator<<(std::ostream &os, const Catalog &Cata
 
 
 
-PathNode=CppClass("PathNode")
+PathNode=CppClass("Struct PathNode")
 classes.append(PathNode)
 
 for i in ['Journey *pjourney','PathNode *lastPathNode','LinkedList<PathNode> nextPathNodes','unsigned int refCount = 0']:
     PathNode.addAttribut(i)
 
-for i in ['']:
+for i in []:
     PathNode.addMéthode(i)
 
 
 CompositeJourney=CppClass("CompositeJourney")
 classes.append(CompositeJourney)
 
-for i in ['']:
+for i in []:
     CompositeJourney.addAttribut(i)
 
 for i in ['int add(Journey *journey, bool check = true)','friend std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney)','void show(void) const']:
@@ -91,11 +91,34 @@ for i in ['int add(Journey *journey, bool check = true)','friend std::ostream &o
 
 
 
+Node=CppClass('<typename T> struct Node')
+classes.append(Node)
+
+for i in ['T *pdata','Node<T> *next']:
+    Node.addAttribut(i)
+
+for i in []:
+    Node.addMéthode(i)
+
+
+
+
+LinkedList=CppClass("<typename T> LinkedList")
+classes.append(LinkedList)
+
+for i in ['Node<T> *_first','Node<T> *_last','unsigned int refCount']:
+    LinkedList.addAttribut(i)
+
+for i in ['virtual ~LinkedList()','void Add(T *pdata, bool AddToEnd = true)','Node<T> *getFirst(void) const','Node<T> *getLast(void) const']:
+    LinkedList.addMéthode(i)
+
+
+
 
 
 l=""
 for _class in classes:
-    l+='\n\n\t'+_class.className+' [label = <{<b>'+_class.className+'</b>  |'+_class.generateAttributs()+'|'+_class.generateMéthodes()+"}>;];\n"
+    l+='\n\n\t"'+_class.className+'" [label = <{<b>'+html.escape(_class.className)+'</b>  |'+_class.generateAttributs()+'|'+_class.generateMéthodes()+"}>;];\n"
 
 
 

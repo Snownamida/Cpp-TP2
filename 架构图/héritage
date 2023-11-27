@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2394pt" height="380pt" viewBox="0.00 0.00 2394.41 379.60">
+<g id="graph0" class="graph" transform="translate(4,375.6000061035156) scale(1)" data-name="graphname">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-375.6 2390.41,-375.6 2390.41,4 -4,4"/>
+<!-- Journey -->
+<g id="node1" class="node" pointer-events="visible" data-name="Journey">
+
+<polygon fill="#f2f2f2" stroke="black" points="357.52,-0.5 357.52,-167.3 801.83,-167.3 801.83,-0.5 357.52,-0.5"/>
+<text text-anchor="start" x="553.43" y="-151.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Journey</text>
+<text text-anchor="start" x="602.43" y="-151.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="357.52,-142.5 801.83,-142.5"/>
+<text text-anchor="start" x="552.07" y="-126.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<text text-anchor="start" x="528.75" y="-112.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">const char *_from</text>
+<text text-anchor="start" x="536.91" y="-98.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">const char *_to</text>
+<text text-anchor="start" x="507.68" y="-84.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">unsigned int refCount = 0</text>
+<polyline fill="none" stroke="black" points="357.52,-78.5 801.83,-78.5"/>
+<text text-anchor="start" x="550.12" y="-62.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+<text text-anchor="start" x="497.05" y="-48.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">virtual void show(void) const</text>
+<text text-anchor="start" x="433.23" y="-34.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Journey(const char *start = "", const char *end = "")</text>
+<text text-anchor="start" x="365.52" y="-20.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, const Journey &amp;journey)</text>
+<text text-anchor="start" x="529.04" y="-6.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">virtual ~Journey()</text>
+</g>
+<!-- SimpleJourney -->
+<g id="node2" class="node" pointer-events="visible" data-name="SimpleJourney">
+
+<polygon fill="#f2f2f2" stroke="black" points="0,-225.3 0,-350.1 539.35,-350.1 539.35,-225.3 0,-225.3"/>
+<text text-anchor="start" x="222.81" y="-334.5" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">SimpleJourney</text>
+<text text-anchor="start" x="313.04" y="-334.5" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="0,-325.3 539.35,-325.3"/>
+<text text-anchor="start" x="242.07" y="-309.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<text text-anchor="start" x="185.7" y="-295.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">const char *_transportMethod</text>
+<polyline fill="none" stroke="black" points="0,-289.3 539.35,-289.3"/>
+<text text-anchor="start" x="240.12" y="-273.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+<text text-anchor="start" x="8" y="-259.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">SimpleJourney(const char *start = "", const char *end = "",const char *transportMethod = "")</text>
+<text text-anchor="start" x="199.21" y="-245.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">virtual ~SimpleJourney()</text>
+<text text-anchor="start" x="207.07" y="-231.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void show(void) const</text>
+</g>
+<!-- SimpleJourney&#45;&gt;Journey -->
+<g id="edge4" class="edge" data-name="SimpleJourney-&gt;Journey">
+
+<path fill="none" stroke="black" d="M363.95,-225.33C389.13,-208.94 416.84,-190.9 443.78,-173.37"/>
+<polygon fill="black" stroke="black" points="445.52,-176.4 452,-168.02 441.71,-170.54 445.52,-176.4"/>
+</g>
+<!-- Journeys -->
+<g id="node3" class="node" pointer-events="visible" data-name="Journeys">
+
+<polygon fill="#f2f2f2" stroke="black" points="871.07,-21.5 871.07,-146.3 1326.28,-146.3 1326.28,-21.5 871.07,-21.5"/>
+<text text-anchor="start" x="1069.7" y="-130.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Journeys</text>
+<text text-anchor="start" x="1124.15" y="-130.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="871.07,-121.5 1326.28,-121.5"/>
+<text text-anchor="start" x="1071.07" y="-105.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<text text-anchor="start" x="984.05" y="-91.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">LinkedList&lt;Journey&gt; journeyLinkedList</text>
+<polyline fill="none" stroke="black" points="871.07,-85.5 1326.28,-85.5"/>
+<text text-anchor="start" x="1069.12" y="-69.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+<text text-anchor="start" x="879.07" y="-55.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, const Journeys &amp;journeys)</text>
+<text text-anchor="start" x="1017.42" y="-41.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void add(Journey *pjourney)</text>
+<text text-anchor="start" x="997.49" y="-27.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void show(const char sep = '|') const</text>
+</g>
+<!-- Catalog -->
+<g id="node4" class="node" pointer-events="visible" data-name="Catalog">
+
+<polygon fill="#f2f2f2" stroke="black" points="1139.41,-232.3 1139.41,-343.1 1653.95,-343.1 1653.95,-232.3 1139.41,-232.3"/>
+<text text-anchor="start" x="1371.6" y="-327.5" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Catalog</text>
+<text text-anchor="start" x="1418.26" y="-327.5" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="1139.41,-318.3 1653.95,-318.3"/>
+<text text-anchor="start" x="1369.07" y="-302.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<text text-anchor="start" x="1341.65" y="-288.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">PathNode pathRoot</text>
+<polyline fill="none" stroke="black" points="1139.41,-282.3 1653.95,-282.3"/>
+<text text-anchor="start" x="1367.12" y="-266.7" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+<text text-anchor="start" x="1182.52" y="-252.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, const Catalog &amp;Catalog)</text>
+<text text-anchor="start" x="1147.41" y="-238.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void search(const char *const from, const char *const to, PathNode *pathHead = nullptr)</text>
+</g>
+<!-- Catalog&#45;&gt;Journeys -->
+<g id="edge1" class="edge" data-name="Catalog-&gt;Journeys">
+
+<path fill="none" stroke="black" d="M1316.43,-232.36C1280.12,-207.77 1236.83,-178.46 1198.46,-152.47"/>
+<polygon fill="black" stroke="black" points="1200.83,-149.85 1190.58,-147.14 1196.9,-155.64 1200.83,-149.85"/>
+</g>
+<!-- Struct PathNode -->
+<g id="node5" class="node" pointer-events="visible" data-name="Struct PathNode">
+
+<polygon fill="#f2f2f2" stroke="black" points="1672.32,-223.9 1672.32,-351.5 1909.03,-351.5 1909.03,-223.9 1672.32,-223.9"/>
+<text text-anchor="start" x="1738.96" y="-335.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Struct PathNode</text>
+<text text-anchor="start" x="1838.89" y="-335.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="1672.32,-326.7 1909.03,-326.7"/>
+<text text-anchor="start" x="1763.07" y="-311.1" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<text text-anchor="start" x="1738.38" y="-297.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Journey *pjourney</text>
+<text text-anchor="start" x="1720.49" y="-283.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">PathNode *lastPathNode</text>
+<text text-anchor="start" x="1680.32" y="-269.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">LinkedList&lt;PathNode&gt; nextPathNodes</text>
+<text text-anchor="start" x="1718.68" y="-255.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">unsigned int refCount = 0</text>
+<polyline fill="none" stroke="black" points="1672.32,-248.7 1909.03,-248.7"/>
+<text text-anchor="start" x="1761.12" y="-233.1" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+</g>
+<!-- CompositeJourney -->
+<g id="node6" class="node" pointer-events="visible" data-name="CompositeJourney">
+
+<polygon fill="#f2f2f2" stroke="black" points="557.63,-230.9 557.63,-344.5 1121.72,-344.5 1121.72,-230.9 557.63,-230.9"/>
+<text text-anchor="start" x="781.54" y="-328.9" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">CompositeJourney</text>
+<text text-anchor="start" x="894.31" y="-328.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<polyline fill="none" stroke="black" points="557.63,-319.7 1121.72,-319.7"/>
+<text text-anchor="start" x="812.07" y="-304.1" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Attributs</text>
+<polyline fill="none" stroke="black" points="557.63,-294.9 1121.72,-294.9"/>
+<text text-anchor="start" x="810.12" y="-279.3" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00">Méthodes</text>
+<text text-anchor="start" x="714.63" y="-265.3" font-family="Helvetica,Arial,sans-serif" font-size="14.00">int add(Journey *journey, bool check = true)</text>
+<text text-anchor="start" x="565.63" y="-251.3" font-family="Helvetica,Arial,sans-serif" font-size="14.00">friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, const CompositeJourney &amp;compositeJourney)</text>
+<text text-anchor="start" x="777.07" y="-237.3" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void show(void) const</text>
+</g>
+<!-- CompositeJourney&#45;&gt;Journey -->
+<g id="edge3" class="edge" data-name="CompositeJourney-&gt;Journey">
+
+<path fill="none" stroke="black" d="M767.94,-231.02C745.22,-213.39 719.5,-193.43 694.54,-174.05"/>
+<polygon fill="black" stroke="black" points="696.99,-171.52 686.94,-168.15 692.7,-177.05 696.99,-171.52"/>
+</g>
+<!-- CompositeJourney&#45;&gt;Journeys -->
+<g id="edge2" class="edge" data-name="CompositeJourney-&gt;Journeys">
+
+<path fill="none" stroke="black" d="M911.13,-231.02C942.07,-206.92 978.57,-178.48 1011.11,-153.13"/>
+<polygon fill="black" stroke="black" points="1013.24,-155.9 1018.98,-147 1008.94,-150.38 1013.24,-155.9"/>
+</g>
+<!-- &lt;typename T&gt; struct Node -->
+<g id="node7" class="node" pointer-events="visible" data-name="&lt;typename T&gt; struct Node">
+
+<polygon fill="#f2f2f2" stroke="black" points="1926.82,-237.9 1926.82,-337.5 2106.53,-337.5 2106.53,-237.9 1926.82,-237.9"/>
+<text text-anchor="start" x="1934.82" y="-321.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00" font-weight="bold">&lt;typename T&gt; struct Node</text>
+<polyline fill="none" stroke="black" points="1926.82,-312.7 2106.53,-312.7"/>
+<text text-anchor="start" x="2095.03" y="-321.9" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<text text-anchor="start" x="1989.07" y="-297.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00" font-weight="bold">Attributs</text>
+<text text-anchor="start" x="1991.99" y="-283.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">T *pdata</text>
+<polyline fill="none" stroke="black" points="1926.82,-262.7 2106.53,-262.7"/>
+<text text-anchor="start" x="1972.04" y="-269.1" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Node&lt;T&gt; *next</text>
+<text text-anchor="start" x="1987.12" y="-247.1" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="14.00" style="">Méthodes</text>
+</g>
+<!-- &lt;typename T&gt; LinkedList -->
+<g id="node8" class="node" pointer-events="visible" data-name="&lt;typename T&gt; LinkedList">
+
+<polygon fill="#f2f2f2" stroke="black" points="2124.95,-204.3 2124.95,-371.1 2386.41,-371.1 2386.41,-204.3 2124.95,-204.3"/>
+<text text-anchor="start" x="2175.55" y="-355.5" font-family="Helvetica,Arial,sans-serif" font-size="14.00" font-weight="bold">&lt;typename T&gt; LinkedList</text>
+<polyline fill="none" stroke="black" points="2124.95,-346.3 2386.41,-346.3"/>
+<text text-anchor="start" x="2332.3" y="-355.5" font-family="Helvetica,Arial,sans-serif" font-size="14.00"> </text>
+<text text-anchor="start" x="2228.07" y="-330.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00" font-weight="bold">Attributs</text>
+<text text-anchor="start" x="2208.32" y="-316.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Node&lt;T&gt; *_first</text>
+<text text-anchor="start" x="2209.87" y="-302.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Node&lt;T&gt; *_last</text>
+<polyline fill="none" stroke="black" points="2124.95,-282.3 2386.41,-282.3"/>
+<text text-anchor="start" x="2194.63" y="-288.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">unsigned int refCount</text>
+<text text-anchor="start" x="2226.12" y="-266.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00" font-weight="bold">Méthodes</text>
+<text text-anchor="start" x="2196.49" y="-252.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">virtual ~LinkedList()</text>
+<text text-anchor="start" x="2132.95" y="-238.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">void Add(T *pdata, bool AddToEnd = true)</text>
+<text text-anchor="start" x="2168.07" y="-224.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Node&lt;T&gt; *getFirst(void) const</text>
+<text text-anchor="start" x="2168.86" y="-210.7" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Node&lt;T&gt; *getLast(void) const</text>
+</g>
+</g>
+</svg>
