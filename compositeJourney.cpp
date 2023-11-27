@@ -3,7 +3,7 @@
 #include <cstring>
 
 int CompositeJourney::Add(Journey *pjourney, bool check) {
-  if (!journeyLinkedList.getFirst()) {
+  if (!journeyLinkedList.GetFirst()) {
     Journeys::Add(pjourney);
     free((char *)_from);
     free((char *)_to);
