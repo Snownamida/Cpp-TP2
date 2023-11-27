@@ -12,8 +12,8 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
     return 0;
   }
 
-  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->getTo(),
-                           pjourney->getFrom())) {
+  if (check && std::strcmp(journeyLinkedList.GetLast()->pdata->GetTo(),
+                           pjourney->GetFrom())) {
     delete pjourney;
     return -1;
   }
