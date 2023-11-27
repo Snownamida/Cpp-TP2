@@ -4,7 +4,8 @@
 #include <cstring>
 #include <iostream>
 
-class Journey {
+class Journey
+{
 protected:
   const char *_from;
   const char *_to;
@@ -17,8 +18,8 @@ public:
   Journey(const char *start = "", const char *end = "")
       : _from(strdup(start)), _to(strdup(end)) {}
 
-  const char *getFrom(void) const { return _from; }
-  const char *getTo(void) const { return _to; }
+  const char *GetFrom(void) const { return _from; }
+  const char *GetTo(void) const { return _to; }
 
   friend std::ostream &operator<<(std::ostream &os, const Journey &journey);
 

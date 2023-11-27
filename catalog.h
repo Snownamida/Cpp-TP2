@@ -3,20 +3,26 @@
 
 #include "journeys.h"
 
-struct PathNode {
+struct PathNode
+{
   Journey *pjourney;
   PathNode *lastPathNode;
   LinkedList<PathNode> nextPathNodes;
   unsigned int refCount = 0;
+
+  // Constructor that takes two parameters
+  PathNode(Journey *journey, PathNode *lastNode)
+      : pjourney(journey), lastPathNode(lastNode) {}
 };
 
-class Catalog : public Journeys {
+class Catalog : public Journeys
+{
 protected:
   PathNode pathRoot{nullptr, nullptr};
 
 public:
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
-  void search(const char *const from, const char *const to,
+  void Search(const char *const from, const char *const to,
               PathNode *pathHead = nullptr);
 };
 

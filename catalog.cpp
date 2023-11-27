@@ -1,53 +1,89 @@
-#include "catalog.h"
-#include <cstring>
-#include <ostream>
+/*************************************************************************
+                           catalog
+                             -------------------
+    début                : 27/11/2023
+    copyright            : (C) 2023 par Jixiang, Adam, Clément, Louis
+    binome               : B3311 et B3309
+*************************************************************************/
 
-std::ostream &operator<<(std::ostream &os, const Catalog &catalog) {
+//---------- Réalisation de la classe <Catalog> (fichier Catalog.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+#include <cstring>
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::ostream;
+
+std::ostream &operator<<(std::ostream &os, const Catalog &catalog)
+{
   catalog.show('\n');
   return os;
 }
 
-void Catalog::search(const char *const from, const char *const to,
-                     PathNode *pathNode) {
-  if (!strcmp(from, to)) {
+void Catalog::Search(const char *const from, const char *const to,
+                     PathNode *pathNode)
+{
+  if (!strcmp(from, to))
+  {
     LinkedList<Journey> path;
 
-    while (pathNode && pathNode->pjourney) {
+    while (pathNode && pathNode->pjourney)
+    {
       path.add(pathNode->pjourney, false);
       pathNode = pathNode->lastPathNode;
+
     }
 
-    for (Node<Journey> *nodeJourney = path.getFirst(); nodeJourney;
-         nodeJourney = nodeJourney->next) {
-      std::cout << *(nodeJourney->pdata) << std::endl;
+    for (Node<Journey> *nodeJourney = path.GetFirst(); nodeJourney;nodeJourney = nodeJourney->next) {
+
+      cout << *(nodeJourney->pdata) << endl;
+
     }
 
-    std::cout << std::endl;
+    cout << endl;
     return;
   }
 
-  if (!pathNode) {
+  if (!pathNode)
+  {
     pathNode = &pathRoot;
   }
 
-  for (Node<Journey> *nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
-       nodeJourney = nodeJourney->next) {
+  for (Node<Journey> *nodeJourney = journeyLinkedList.GetFirst(); nodeJourney; nodeJourney = nodeJourney->next) {
 
-    if (!strcmp(nodeJourney->pdata->getFrom(), from)) {
+    if (!strcmp(nodeJourney->pdata->GetFrom(), from)) {
 
       PathNode *checkPathNode = pathNode;
       bool alreadyUsed = false;
+
       while (checkPathNode && checkPathNode->pjourney) {
+
         if (checkPathNode->pjourney == nodeJourney->pdata)
+
           alreadyUsed = true;
+
         checkPathNode = checkPathNode->lastPathNode;
+
       }
+
       if (alreadyUsed)
+
         continue;
 
       PathNode *nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
-      pathNode->nextPathNodes.add(nextPathNode);
-      search(nodeJourney->pdata->getTo(), to, nextPathNode);
+      pathNode->nextPathNodes.Add(nextPathNode);
+      Search(nodeJourney->pdata->GetTo(), to, nextPathNode);
+
     }
   }
-}
+} //----- Fin de Search
+
+//------------------------------------------------- Surcharge d'opérateurs
+ostream &operator<<(ostream &os, const Catalog &catalog) 
+{
+  catalog.show('\n');
+  return os;
+} //----- Fin de operator <<

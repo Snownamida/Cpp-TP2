@@ -4,13 +4,14 @@
 #include "journey.h"
 #include "linkedList.h"
 
-class Journeys {
+class Journeys
+{
 public:
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
 
   // important:should pass a new Journey* object,
   // Journeys will make the GC for it
-  void add(Journey *pjourney) { journeyLinkedList.add(pjourney); }
+  void Add(Journey *pjourney) { journeyLinkedList.Add(pjourney); }
   unsigned int refCount = 0;
 
 protected:

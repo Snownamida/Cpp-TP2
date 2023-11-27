@@ -1,15 +1,21 @@
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
 
-template <typename T> struct Node { //
+template <typename T>
+struct Node
+{ //
   T *pdata;
   Node<T> *next;
 };
 
-template <typename T> class LinkedList {
+template <typename T>
+class LinkedList
+{
 public:
-  virtual ~LinkedList() {
-    while (_first) {
+  virtual ~LinkedList()
+  {
+    while (_first)
+    {
       _last = _first; // from here on, _last is only used as a temp var
       _first = _first->next;
       _last->pdata->refCount--;
@@ -21,14 +27,15 @@ public:
   // important:should pass a new Journey* object,
   // LinkedList will make the GC for it
   // data should have a refCount
-  void add(T *pdata, bool addToEnd = true) {
+  void Add(T *pdata, bool AddToEnd = true) {
     Node<T> *node = new Node<T>{pdata, nullptr};
     pdata->refCount++;
     if (!_first)
       _first = _last = node;
-    else if (addToEnd)
+    else if (AddToEnd)
       _last = _last->next = node;
-    else {
+    else
+    {
       node->next = _first;
       _first = node;
     };
