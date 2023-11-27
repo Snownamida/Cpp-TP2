@@ -21,7 +21,7 @@ void Catalog::search(const char *const from, const char *const to,
       pathNode = pathNode->lastPathNode;
     }
 
-    for (auto nodeJourney = path.getFirst(); nodeJourney;
+    for (Node<Journey> *nodeJourney = path.getFirst(); nodeJourney;
          nodeJourney = nodeJourney->next)
     {
       std::cout << *(nodeJourney->pdata) << std::endl;
@@ -36,14 +36,14 @@ void Catalog::search(const char *const from, const char *const to,
     pathNode = &pathRoot;
   }
 
-  for (auto nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
+  for (Node<Journey> *nodeJourney = journeyLinkedList.getFirst(); nodeJourney;
        nodeJourney = nodeJourney->next)
   {
 
     if (!strcmp(nodeJourney->pdata->getFrom(), from))
     {
 
-      auto checkPathNode = pathNode;
+      PathNode *checkPathNode = pathNode;
       bool alreadyUsed = false;
       while (checkPathNode && checkPathNode->pjourney)
       {
@@ -54,7 +54,7 @@ void Catalog::search(const char *const from, const char *const to,
       if (alreadyUsed)
         continue;
 
-      auto nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
+      PathNode *nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
       pathNode->nextPathNodes.add(nextPathNode);
       search(nodeJourney->pdata->getTo(), to, nextPathNode);
     }

@@ -3,7 +3,7 @@
 
 template <typename T>
 struct Node
-{
+{ //
   T *pdata;
   Node<T> *next;
 };
