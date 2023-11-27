@@ -1,7 +1,7 @@
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
 
-template <typename T> struct Node {
+template <typename T> struct Node { //
   T *pdata;
   Node<T> *next;
 };
