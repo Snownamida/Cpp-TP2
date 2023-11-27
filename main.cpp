@@ -63,7 +63,7 @@ int main() {
         pcompositeJourney->add(new SimpleJourney(start, end, transportMethod));
 
         cout << endl;
-        cout << "Would you like to input another segment of the journey? (Y/n) :";
+        cout << "Would you like to input another segment of the journey? (y/n) :";
         cin >> start;
 
         } while (start[0] == 'Y' || start[0] == 'y');
