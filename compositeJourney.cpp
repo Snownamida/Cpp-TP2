@@ -23,7 +23,7 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
   return 0;
 }
 
-void CompositeJourney::show(void) const { Journeys::show(); };
+void CompositeJourney::show(void) const { Journeys::show(); }
 
 std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney)
 {

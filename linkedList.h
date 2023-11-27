@@ -41,8 +41,8 @@ public:
     };
   }
 
-  Node<T> *getFirst(void) const { return _first; }
-  Node<T> *getLast(void) const { return _last; }
+  Node<T> *GetFirst(void) const { return _first; }
+  Node<T> *GetLast(void) const { return _last; }
   unsigned int refCount = 0;
 
 protected:
