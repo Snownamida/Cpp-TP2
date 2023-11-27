@@ -11,6 +11,7 @@ int main() {
   Catalog catalog;
   cout << " / ___|__ _| |_ __ _| | ___   __ _ \n| |   / _` | __/ _` | |/ _ \\ / _` |\n| |__| (_| | || (_| | | (_) | (_| |\n \\____\\__,_|\\__\\__,_|_|\\___/ \\__, |\n                             |___/ \n" << endl; // Just an ASCII art.
 
+
   while (true) {
 
     cout << "Select an action number:" << endl;
