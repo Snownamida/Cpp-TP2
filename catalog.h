@@ -9,6 +9,10 @@ struct PathNode
   PathNode *lastPathNode;
   LinkedList<PathNode> nextPathNodes;
   unsigned int refCount = 0;
+
+  // Constructor that takes two parameters
+  PathNode(Journey *journey, PathNode *lastNode)
+      : pjourney(journey), lastPathNode(lastNode) {}
 };
 
 class Catalog : public Journeys
