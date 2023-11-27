@@ -15,7 +15,7 @@ int main()
 
   while (true)
   {
-    cout << "------- Select an action number --------" << endl;
+    cout << "\n------- Select an action number --------" << endl;
     cout << " ______________________________________ " << endl;
     cout << "|                                      |" << endl;
     cout << "| Insert a Simple Journey............1 |" << endl;
@@ -80,9 +80,9 @@ int main()
 
     case '3':
 
-      cout << "\n =----------------Catalog----------------= \n";
+      cout << "\n=---------------Catalog---------------= \n" << endl;
       cout << catalog << endl;
-      cout << "\n =---------------------------------------= \n";
+      cout << "\n=-------------------------------------= " << endl;
       break;
 
     case '4':
@@ -93,8 +93,9 @@ int main()
       cout << ">       End : ";
       cin >> end;
 
-      cout << "\nResult : \n";
+      cout << "\n=-----------Result (" << start << " to " << end << ")-----------= \n" << endl;
       catalog.Search(start, end);
+      cout << "=-------------------------------------= " << endl;
 
       cout << endl;
       break;
