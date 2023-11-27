@@ -2,24 +2,24 @@
 #include <cstdlib>
 #include <cstring>
 
-int CompositeJourney::add(Journey *pjourney, bool check) {
+int CompositeJourney::Add(Journey *pjourney, bool check) {
   if (!journeyLinkedList.getFirst()) {
-    Journeys::add(pjourney);
+    Journeys::Add(pjourney);
     free((char *)_from);
     free((char *)_to);
-    _from = strdup(pjourney->getFrom());
-    _to = strdup(pjourney->getTo());
+    _from = strdup(pjourney->GetFrom());
+    _to = strdup(pjourney->GetTo());
     return 0;
   }
 
-  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->getTo(),
-                           pjourney->getFrom())) {
+  if (check && std::strcmp(journeyLinkedList.getLast()->pdata->GetTo(),
+                           pjourney->GetFrom())) {
     delete pjourney;
     return -1;
   }
-  Journeys::add(pjourney);
+  Journeys::Add(pjourney);
   free((char *)_to);
-  _to = strdup(pjourney->getTo());
+  _to = strdup(pjourney->GetTo());
   return 0;
 }
 

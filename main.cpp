@@ -17,7 +17,7 @@ int main() {
     cout << "|                                      |" << endl;
     cout << "| Insert a Simple Journey............1 |" << endl;
     cout << "| Insert a Composite Journey.........2 |" << endl;
-    cout << "| Show catalog.......................3 |" << endl;
+    cout << "| show catalog.......................3 |" << endl;
     cout << "| Search path........................4 |" << endl;
     cout << "| Quit...............................5 |" << endl;
     cout << "|______________________________________|" << endl;
@@ -40,7 +40,7 @@ int main() {
         cout << "transportMethod: ";
         cin >> transportMethod;
 
-        catalog.add(new SimpleJourney(start, end, transportMethod));
+        catalog.Add(new SimpleJourney(start, end, transportMethod));
         cout << endl;
         break;
 
@@ -60,7 +60,7 @@ int main() {
         cout << "transportMethod: ";
         cin >> transportMethod;
 
-        pcompositeJourney->add(new SimpleJourney(start, end, transportMethod));
+        pcompositeJourney->Add(new SimpleJourney(start, end, transportMethod));
 
         cout << endl;
         cout << "Would you like to input another segment of the journey? (y/n) :";
@@ -68,7 +68,7 @@ int main() {
 
         } while (start[0] == 'Y' || start[0] == 'y');
 
-        catalog.add(pcompositeJourney);
+        catalog.Add(pcompositeJourney);
     }
         cout << endl;
         break;
@@ -87,7 +87,7 @@ int main() {
       cout << "end: ";
       cin >> end;
 
-      catalog.search(start, end);
+      catalog.Search(start, end);
 
       cout << endl << endl;
       break;

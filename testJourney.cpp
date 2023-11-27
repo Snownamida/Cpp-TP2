@@ -43,9 +43,9 @@ int main() {
 
   Journeys journeys;
   cout << journeys << endl;
-  journeys.add(new SimpleJourney("Nanjing", "Beijing", "train"));
+  journeys.Add(new SimpleJourney("Nanjing", "Beijing", "train"));
   cout << journeys << endl;
-  journeys.add(new SimpleJourney("Lyon", "Tokyo", "plane"));
+  journeys.Add(new SimpleJourney("Lyon", "Tokyo", "plane"));
   cout << journeys << endl;
   cout << "===========Test Journeys End===========" << endl;
 
@@ -55,11 +55,11 @@ int main() {
 
   CompositeJourney compositeJourney;
   cout << compositeJourney << endl;
-  compositeJourney.add(new SimpleJourney("Guangzhou", "Shenzhen", "bus"));
+  compositeJourney.Add(new SimpleJourney("Guangzhou", "Shenzhen", "bus"));
   cout << compositeJourney << endl;
-  compositeJourney.add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
+  compositeJourney.Add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
   cout << compositeJourney << endl;
-  compositeJourney.add(new SimpleJourney("Macao", "Taiwan", "boat"));
+  compositeJourney.Add(new SimpleJourney("Macao", "Taiwan", "boat"));
   cout << compositeJourney << endl;
 
   cout << "===========Test CompositeJourney End===========" << endl;
@@ -69,34 +69,34 @@ int main() {
 
   Catalog catalog;
   cout << catalog << endl << endl;
-  catalog.add(new Journey("Guangzhou", "Shenzhen"));
+  catalog.Add(new Journey("Guangzhou", "Shenzhen"));
   cout << catalog << endl << endl;
-  catalog.add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
+  catalog.Add(new SimpleJourney("Shenzhen", "Honkong", "boat"));
   cout << catalog << endl << endl;
   CompositeJourney *pcompositeJourney = new CompositeJourney;
-  pcompositeJourney->add(new SimpleJourney("Wuhan", "Xiamen", "train"));
-  pcompositeJourney->add(new SimpleJourney("Xiamen", "Fuzhou", "metro"));
+  pcompositeJourney->Add(new SimpleJourney("Wuhan", "Xiamen", "train"));
+  pcompositeJourney->Add(new SimpleJourney("Xiamen", "Fuzhou", "metro"));
 
-  catalog.add(pcompositeJourney);
+  catalog.Add(pcompositeJourney);
   cout << catalog << endl << endl;
 
-  catalog.add(new SimpleJourney("Macao", "Taiwan", "boat"));
+  catalog.Add(new SimpleJourney("Macao", "Taiwan", "boat"));
   cout << catalog << endl << endl;
 
-  catalog.add(new Journey("Shenzhen", "Macao"));
-  catalog.add(new Journey("Fuzhou", "Macao"));
-  catalog.add(new Journey("Guangzhou", "Macao"));
-  catalog.add(new Journey("Honkong", "Wuhan"));
-  catalog.add(new Journey("Taiwan", "Wuhan"));
-  catalog.add(new Journey("Macao", "Wuhan"));
+  catalog.Add(new Journey("Shenzhen", "Macao"));
+  catalog.Add(new Journey("Fuzhou", "Macao"));
+  catalog.Add(new Journey("Guangzhou", "Macao"));
+  catalog.Add(new Journey("Honkong", "Wuhan"));
+  catalog.Add(new Journey("Taiwan", "Wuhan"));
+  catalog.Add(new Journey("Macao", "Wuhan"));
   cout << catalog << endl << endl;
   cout << catalog << endl << endl;
 
-  catalog.search("Guangzhou", "Taiwan");
+  catalog.Search("Guangzhou", "Taiwan");
   cout << endl << endl;
-  catalog.search("Honkong", "Macao");
+  catalog.Search("Honkong", "Macao");
   cout << "endl" << endl;
-  catalog.search("Honkong", "Maao");
+  catalog.Search("Honkong", "Maao");
 
   cout << "===========Test Catalog End===========" << endl;
   cout << endl << endl;

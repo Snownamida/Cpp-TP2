@@ -7,7 +7,7 @@ void Journeys::show(const char sep) const {
 
   for (unsigned int i = 1; nodeJourney; i++) {
     if (sep == '\n')
-      std::cout << i << '. ';
+      std::cout << i << ". ";
 
     std::cout << *nodeJourney->pdata;
     nodeJourney = nodeJourney->next;

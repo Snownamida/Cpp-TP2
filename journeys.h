@@ -10,7 +10,7 @@ public:
 
   // important:should pass a new Journey* object,
   // Journeys will make the GC for it
-  void add(Journey *pjourney) { journeyLinkedList.add(pjourney); }
+  void Add(Journey *pjourney) { journeyLinkedList.Add(pjourney); }
   unsigned int refCount = 0;
 
 protected:

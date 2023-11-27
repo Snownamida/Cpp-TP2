@@ -16,7 +16,7 @@ protected:
 
 public:
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
-  void search(const char *const from, const char *const to,
+  void Search(const char *const from, const char *const to,
               PathNode *pathHead = nullptr);
 };
 

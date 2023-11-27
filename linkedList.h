@@ -21,12 +21,12 @@ public:
   // important:should pass a new Journey* object,
   // LinkedList will make the GC for it
   // data should have a refCount
-  void add(T *pdata, bool addToEnd = true) {
+  void Add(T *pdata, bool AddToEnd = true) {
     Node<T> *node = new Node<T>{pdata, nullptr};
     pdata->refCount++;
     if (!_first)
       _first = _last = node;
-    else if (addToEnd)
+    else if (AddToEnd)
       _last = _last->next = node;
     else {
       node->next = _first;
