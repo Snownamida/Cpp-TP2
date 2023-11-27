@@ -1,22 +1,45 @@
+/*************************************************************************
+                           journeys
+                             -------------------
+    début                : 27/11/2023
+    copyright            : (C) 2023 par Jixiang, Adam, Clément, Louis
+    binome               : B3311 et B3309
+*************************************************************************/
+
+//---------- Interface de la classe <journeys> (fichier journeys.h) ----------------
 #ifndef JOURNEYS_H_
 #define JOURNEYS_H_
 
+//--------------------------------------------------- Interfaces utilisées
 #include "journey.h"
 #include "linkedList.h"
 
 class Journeys
 {
-public:
-  friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
+//----------------------------------------------------------------- PUBLIC
 
+public:
+//----------------------------------------------------- Méthodes publiques
+  
+  void Add(Journey *pjourney) 
   // important:should pass a new Journey* object,
   // Journeys will make the GC for it
-  void Add(Journey *pjourney) { journeyLinkedList.Add(pjourney); }
+  { 
+    journeyLinkedList.Add(pjourney); 
+  }
+
+//------------------------------------------------- Surcharge d'opérateurs
+  friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
+
+//----------------------------------------------------- Attributs publics
   unsigned int refCount = 0;
 
 protected:
-  LinkedList<Journey> journeyLinkedList;
+//----------------------------------------------------- Méthodes protégées
   void show(const char sep = '|') const;
+
+//----------------------------------------------------- Attributs protégés
+  LinkedList<Journey> journeyLinkedList;
 };
 
 #endif
