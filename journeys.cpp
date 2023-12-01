@@ -1,12 +1,10 @@
 #include "journeys.h"
 #include <ostream>
 
-void Journeys::show(const char sep) const
-{
+void Journeys::show(const char sep) const {
   Node<Journey> *nodeJourney = journeyLinkedList.GetFirst();
 
-  for (unsigned int i = 1; nodeJourney; i++)
-  {
+  for (unsigned int i = 1; nodeJourney; i++) {
     if (sep == '\n')
       std::cout << i << ". ";
 
@@ -18,8 +16,7 @@ void Journeys::show(const char sep) const
   }
 }
 
-std::ostream &operator<<(std::ostream &os, const Journeys &journeys)
-{
+std::ostream &operator<<(std::ostream &os, const Journeys &journeys) {
   journeys.show();
   return os;
 }
