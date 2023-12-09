@@ -21,11 +21,14 @@ void SimpleJourney::show(void) const
 {
 
   std::cout << _from << " --(" << _transportMethod << ")-> " << _to;
-}
+} //----- Fin de show
 
 //-------------------------------------------- Constructeurs - destructeur
 
 SimpleJourney::SimpleJourney(const char *start, const char *end, const char *transportMethod): Journey(start, end), _transportMethod(strdup(transportMethod)) {}
 
 //Using free instead of delete because the string was created with strdup(), which require a free
-SimpleJourney::~SimpleJourney() { free((char *)_transportMethod); }
+SimpleJourney::~SimpleJourney() 
+{ 
+  free((char *)_transportMethod);
+} //----- Fin de ~SimpleJourney

@@ -6,14 +6,15 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Réalisation de la classe <journeys> (fichier journeys.cpp) ----------
+//---------- Réalisation de la classe <journeys> (fichier journeys.cpp)
+//----------
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
 #include <iostream>
-using std::ostream;
 using std::cout;
+using std::ostream;
 
 //------------------------------------------------------ Include personnel
 #include "journeys.h"
@@ -21,8 +22,7 @@ using std::cout;
 //----------------------------------------------------------------- PUBLIC
 
 //------------------------------------------------- Surcharge d'opérateurs
-ostream &operator<<(ostream &os, const Journeys &journeys)
-{
+ostream &operator<<(ostream &os, const Journeys &journeys) {
   journeys.show();
   return os;
 } //----- Fin de operator <<
@@ -30,12 +30,10 @@ ostream &operator<<(ostream &os, const Journeys &journeys)
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes privées
-void Journeys::show(const char sep) const
-{
+void Journeys::show(const char sep) const {
   Node<Journey> *nodeJourney = journeyLinkedList.GetFirst();
 
-  for (unsigned int i = 1; nodeJourney; i++)
-  {
+  for (unsigned int i = 1; nodeJourney; i++) {
     if (sep == '\n')
       cout << i << ". ";
 
