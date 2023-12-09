@@ -27,6 +27,8 @@ digraph graphname {
     
     "<typename T> LinkedList" [label = <{<b>&lt;typename T&gt; LinkedList</b>  |<b>Attributs</b><br/>Node&lt;T&gt; *_first<br/>Node&lt;T&gt; *_last<br/>unsigned int refCount|<b>Méthodes</b><br/>virtual ~LinkedList()<br/>void Add(T *pdata, bool AddToEnd = true)<br/>Node&lt;T&gt; *getFirst(void) const<br/>Node&lt;T&gt; *getLast(void) const}>;];
     
+    "Authors" [label = <{<b>Authors</b>  |<b>Jixiang SUN<br/>Adam SCHLEE<br/>Louis KUSNO<br/>Clément Chapard </b>}>;];
+    
     Catalog -> Journeys;
     CompositeJourney -> Journeys;
     CompositeJourney -> Journey;
