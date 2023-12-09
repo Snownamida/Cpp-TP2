@@ -17,7 +17,6 @@ int main() {
   Catalog catalog;
 
   while (true) {
-    cout << "\n------- Select an action number --------" << endl;
     cout << " ______________________________________ " << endl;
     cout << "|                                      |" << endl;
     cout << "| Insert a Simple Journey............1 |" << endl;
@@ -25,10 +24,10 @@ int main() {
     cout << "| Show catalog.......................3 |" << endl;
     cout << "| Search path........................4 |" << endl;
     cout << "| Quit...............................5 |" << endl;
-    cout << "|______________________________________|\n" << endl;
+    cout << "|______________________________________|" << endl << endl;
 
     char actionNumber;
-    cout << ">     Input : ";
+    cout << ">     Select an action number : " << endl;
     cin >> actionNumber;
 
     char start[100], end[100], transportMethod[100];
@@ -37,10 +36,10 @@ int main() {
 
     case '1':
 
-      cout << "\n>     Start : ";
+      cout << "\n>     Departure : ";
       cin >> start;
 
-      cout << ">       End : ";
+      cout << ">       Arrival : ";
       cin >> end;
 
       cout << "> Transport : ";
@@ -56,10 +55,10 @@ int main() {
 
       do {
 
-        cout << "\n>     Start : ";
+        cout << "\n>     Departure of this segment of journey: ";
         cin >> start;
 
-        cout << ">       End : ";
+        cout << ">       Arrival of this segment of journey: ";
         cin >> end;
 
         cout << "> Transport : ";
@@ -87,10 +86,10 @@ int main() {
 
     case '4':
 
-      cout << "\n>     Start : ";
+      cout << "\n>     Departure : ";
       cin >> start;
 
-      cout << ">       End : ";
+      cout << ">       Arrival : ";
       cin >> end;
 
       cout << "\n=-----------Result (" << start << " to " << end
