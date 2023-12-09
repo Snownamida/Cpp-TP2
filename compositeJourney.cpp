@@ -7,7 +7,7 @@
 *************************************************************************/
 
 //---------- Réalisation de la classe <compositeJourney> (fichier
-//compositeJourney.cpp) ----------------
+// compositeJourney.cpp) ----------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -27,8 +27,9 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
   if (!journeyLinkedList.GetFirst()) {
 
     Journeys::Add(pjourney);
-    //Using free instead of delete because the string was created with strdup(), which require a free
-    free((char *)_from); 
+    // Using free instead of delete because the string was created with
+    // strdup(), which require a free
+    free((char *)_from);
 
     free((char *)_to);
     _from = strdup(pjourney->GetFrom());
@@ -44,7 +45,8 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
   }
 
   Journeys::Add(pjourney);
-  //Using free instead of delete because the string was created with strdup(), which require a free
+  // Using free instead of delete because the string was created with strdup(),
+  // which require a free
 
   free((char *)_to);
   _to = strdup(pjourney->GetTo());

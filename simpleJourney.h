@@ -14,29 +14,27 @@
 //--------------------------------------------------- Interfaces utilisées
 #include "journey.h"
 
-
-class SimpleJourney : public Journey 
-{
-//----------------------------------------------------------------- PUBLIC
+class SimpleJourney : public Journey {
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-
-//-------------------------------------------- Constructeurs - destructeur
-  SimpleJourney(const char *start = "", const char *end = "", const char *transportMethod = "");
+  //-------------------------------------------- Constructeurs - destructeur
+  SimpleJourney(const char *start = "", const char *end = "",
+                const char *transportMethod = "");
 
   virtual ~SimpleJourney();
 
-//-------------------------------------------------------------- PROTECTED
+  //-------------------------------------------------------------- PROTECTED
 
 protected:
-//----------------------------------------------------- Attributs protégés
+  //----------------------------------------------------- Attributs protégés
 
   const char *_transportMethod;
 
-//------------------------------------------------------------------ PRIVE
+  //------------------------------------------------------------------ PRIVE
 
 private:
-//------------------------------------------------------- Méthodes privées
+  //------------------------------------------------------- Méthodes privées
 
   void show(void) const;
 };

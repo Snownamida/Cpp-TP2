@@ -6,7 +6,8 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <journey> (fichier journey.h) ----------------
+//---------- Interface de la classe <journey> (fichier journey.h)
+//----------------
 
 #ifndef JOURNEY_H_
 #define JOURNEY_H_
@@ -15,47 +16,39 @@
 #include <cstring>
 #include <iostream>
 
-class Journey
-{
-//----------------------------------------------------------------- PUBLIC
+class Journey {
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
-  
-  const char * GetFrom(void) const 
-  {
-    return _from; 
-  }
+  //----------------------------------------------------- Méthodes publiques
 
-  const char * GetTo(void) const 
-  { 
-    return _to; 
-  }
+  const char *GetFrom(void) const { return _from; }
 
-//------------------------------------------------- Surcharge d'opérateurs
+  const char *GetTo(void) const { return _to; }
+
+  //------------------------------------------------- Surcharge d'opérateurs
   friend std::ostream &operator<<(std::ostream &os, const Journey &journey);
 
-//-------------------------------------------- Constructeurs - destructeur
-  Journey(const char *start = "", const char *end = "") : _from(strdup(start)), _to(strdup(end)) {}
-  
+  //-------------------------------------------- Constructeurs - destructeur
+  Journey(const char *start = "", const char *end = "")
+      : _from(strdup(start)), _to(strdup(end)) {}
+
   virtual ~Journey();
 
-//-------------------------------------------- Attribut publique
+  //-------------------------------------------- Attribut publique
   unsigned int refCount = 0;
 
-//------------------------------------------------------------------ PROTECTED
+  //------------------------------------------------------------------ PROTECTED
 
 protected:
-
-//----------------------------------------------------- Attributs protégés
+  //----------------------------------------------------- Attributs protégés
   const char *_from;
   const char *_to;
 
-//------------------------------------------------------------------ PRIVE
+  //------------------------------------------------------------------ PRIVE
 
 private:
-
-//----------------------------------------------------- Méthodes privées
+  //----------------------------------------------------- Méthodes privées
   virtual void show(void) const;
 };
 

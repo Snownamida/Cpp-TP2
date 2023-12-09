@@ -6,7 +6,8 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <journeys> (fichier journeys.h) ----------------
+//---------- Interface de la classe <journeys> (fichier journeys.h)
+//----------------
 #ifndef JOURNEYS_H_
 #define JOURNEYS_H_
 
@@ -14,31 +15,30 @@
 #include "journey.h"
 #include "linkedList.h"
 
-class Journeys
-{
-//----------------------------------------------------------------- PUBLIC
+class Journeys {
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
-  
-  void Add(Journey *pjourney) 
+  //----------------------------------------------------- Méthodes publiques
+
+  void Add(Journey *pjourney)
   // important:should pass a new Journey* object,
   // Journeys will make the GC for it
-  { 
-    journeyLinkedList.Add(pjourney); 
+  {
+    journeyLinkedList.Add(pjourney);
   }
 
-//------------------------------------------------- Surcharge d'opérateurs
+  //------------------------------------------------- Surcharge d'opérateurs
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
 
-//----------------------------------------------------- Attributs publics
+  //----------------------------------------------------- Attributs publics
   unsigned int refCount = 0;
 
 protected:
-//----------------------------------------------------- Méthodes protégées
+  //----------------------------------------------------- Méthodes protégées
   void show(const char sep = '|') const;
 
-//----------------------------------------------------- Attributs protégés
+  //----------------------------------------------------- Attributs protégés
   LinkedList<Journey> journeyLinkedList;
 };
 

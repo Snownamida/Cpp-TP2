@@ -6,43 +6,43 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <Catalog> (fichier catalog.h) ----------------
+//---------- Interface de la classe <Catalog> (fichier catalog.h)
+//----------------
 #ifndef CATALOG_H_
 #define CATALOG_H_
 
 //--------------------------------------------------- Interfaces utilisées
 #include "journeys.h"
 
-struct PathNode
-{
+struct PathNode {
   Journey *pjourney;
   PathNode *lastPathNode;
   LinkedList<PathNode> nextPathNodes;
   unsigned int refCount = 0;
 
   // Constructor that takes two parameters
-  PathNode(Journey *journey, PathNode *lastNode) : pjourney(journey), lastPathNode(lastNode) {}
+  PathNode(Journey *journey, PathNode *lastNode)
+      : pjourney(journey), lastPathNode(lastNode) {}
 };
 
-class Catalog : public Journeys
-{
-//----------------------------------------------------------------- PUBLIC
+class Catalog : public Journeys {
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+  //----------------------------------------------------- Méthodes publiques
 
-  void Search(const char *const from, const char *const to, PathNode *pathHead = nullptr);
-//------------------------------------------------- Surcharge d'opérateurs
+  void Search(const char *const from, const char *const to,
+              PathNode *pathHead = nullptr);
+  //------------------------------------------------- Surcharge d'opérateurs
 
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
 
-//------------------------------------------------------------------ PRIVE
+  //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Attributs protégés
+  //----------------------------------------------------- Attributs protégés
 
   PathNode pathRoot{nullptr, nullptr};
-
 };
 
 #endif

@@ -6,7 +6,8 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Réalisation de la classe <Catalog> (fichier Catalog.cpp) ------------
+//---------- Réalisation de la classe <Catalog> (fichier Catalog.cpp)
+//------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -23,34 +24,32 @@ using std::ostream;
 //----------------------------------------------------- Méthodes publiques
 void Catalog::Search(const char *const from, const char *const to,
                      PathNode *pathNode)
+// A DFS Search
 {
-  if (!strcmp(from, to))
-  {
+  if (!strcmp(from, to)) {
     LinkedList<Journey> path;
 
-    while (pathNode && pathNode->pjourney)
-    {
+    while (pathNode && pathNode->pjourney) {
       path.Add(pathNode->pjourney, false);
       pathNode = pathNode->lastPathNode;
-
     }
 
-    for (Node<Journey> *nodeJourney = path.GetFirst(); nodeJourney;nodeJourney = nodeJourney->next) {
+    for (Node<Journey> *nodeJourney = path.GetFirst(); nodeJourney;
+         nodeJourney = nodeJourney->next) {
 
       cout << *(nodeJourney->pdata) << endl;
-
     }
 
     cout << endl;
     return;
   }
 
-  if (!pathNode)
-  {
+  if (!pathNode) {
     pathNode = &pathRoot;
   }
 
-  for (Node<Journey> *nodeJourney = journeyLinkedList.GetFirst(); nodeJourney; nodeJourney = nodeJourney->next) {
+  for (Node<Journey> *nodeJourney = journeyLinkedList.GetFirst(); nodeJourney;
+       nodeJourney = nodeJourney->next) {
 
     if (!strcmp(nodeJourney->pdata->GetFrom(), from)) {
 
@@ -64,7 +63,6 @@ void Catalog::Search(const char *const from, const char *const to,
           alreadyUsed = true;
 
         checkPathNode = checkPathNode->lastPathNode;
-
       }
 
       if (alreadyUsed)
@@ -74,14 +72,12 @@ void Catalog::Search(const char *const from, const char *const to,
       PathNode *nextPathNode = new PathNode{nodeJourney->pdata, pathNode};
       pathNode->nextPathNodes.Add(nextPathNode);
       Search(nodeJourney->pdata->GetTo(), to, nextPathNode);
-
     }
   }
 } //----- Fin de Search
 
 //------------------------------------------------- Surcharge d'opérateurs
-ostream &operator<<(ostream &os, const Catalog &catalog) 
-{
+ostream &operator<<(ostream &os, const Catalog &catalog) {
   catalog.show('\n');
   return os;
 } //----- Fin de operator <<

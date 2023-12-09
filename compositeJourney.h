@@ -6,7 +6,8 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <compositeJourney> (fichier compositeJourney.h) ----------------
+//---------- Interface de la classe <compositeJourney> (fichier
+//compositeJourney.h) ----------------
 
 #ifndef COMPOSITEJOURNEY_H_
 #define COMPOSITEJOURNEY_H_
@@ -15,14 +16,12 @@
 #include "journey.h"
 #include "journeys.h"
 
-class CompositeJourney : public Journey, public Journeys
-{
-//----------------------------------------------------------------- PUBLIC
+class CompositeJourney : public Journey, public Journeys {
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+  //----------------------------------------------------- Méthodes publiques
 
-  
   int Add(Journey *journey, bool check = true);
   // Mode d'emploi :
   // return value
@@ -36,13 +35,14 @@ public:
 
   // we need to redifine << here because it exist in both Journey and Journeys
 
-//------------------------------------------------- Surcharge d'opérateurs
-  friend std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney);
+  //------------------------------------------------- Surcharge d'opérateurs
+  friend std::ostream &operator<<(std::ostream &os,
+                                  const CompositeJourney &compositeJourney);
 
-//------------------------------------------------------------------ PRIVE
+  //------------------------------------------------------------------ PRIVE
 
 private:
-//----------------------------------------------------- Méthodes protégées
+  //----------------------------------------------------- Méthodes protégées
   void show(void) const;
 };
 

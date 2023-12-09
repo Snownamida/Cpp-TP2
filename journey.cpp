@@ -17,16 +17,15 @@ using std::ostream;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-Journey::~Journey()
-{
-  //Using free instead of delete because the string was created with strdup(), which require a free
+Journey::~Journey() {
+  // Using free instead of delete because the string was created with strdup(),
+  // which require a free
   free((char *)_from);
   free((char *)_to);
 } //----- Fin de ~Journey
 
 //------------------------------------------------- Surcharge d'opérateurs
-ostream &operator<<(ostream &os, const Journey &journey)
-{
+ostream &operator<<(ostream &os, const Journey &journey) {
   journey.show();
   return os;
 } //----- Fin de operator <<
@@ -34,8 +33,6 @@ ostream &operator<<(ostream &os, const Journey &journey)
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-void Journey::show(void) const 
-{ 
-  std::cout << _from << " --> " << _to; 
+void Journey::show(void) const {
+  std::cout << _from << " --> " << _to;
 } //----- Fin de show
-
