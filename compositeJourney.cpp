@@ -27,7 +27,9 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
   if (!journeyLinkedList.GetFirst()) {
 
     Journeys::Add(pjourney);
-    free((char *)_from);
+    //Using free instead of delete because the string was created with strdup(), which require a free
+    free((char *)_from); 
+
     free((char *)_to);
     _from = strdup(pjourney->GetFrom());
     _to = strdup(pjourney->GetTo());
@@ -42,6 +44,8 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
   }
 
   Journeys::Add(pjourney);
+  //Using free instead of delete because the string was created with strdup(), which require a free
+
   free((char *)_to);
   _to = strdup(pjourney->GetTo());
   return 0;

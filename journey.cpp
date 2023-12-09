@@ -19,6 +19,7 @@ using std::ostream;
 //----------------------------------------------------- Méthodes publiques
 Journey::~Journey()
 {
+  //Using free instead of delete because the string was created with strdup(), which require a free
   free((char *)_from);
   free((char *)_to);
 } //----- Fin de ~Journey
@@ -37,3 +38,4 @@ void Journey::show(void) const
 { 
   std::cout << _from << " --> " << _to; 
 } //----- Fin de show
+
