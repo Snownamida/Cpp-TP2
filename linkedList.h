@@ -84,6 +84,9 @@ public:
   // RefCount is used to know if the data is still used or not
   // If the data is not used anymore, delete it
   {
+    #ifdef TRACE_ENABLED
+      std::cout << "Destructor called for <LinkedList>" << std::endl;
+    #endif
     while (_first) {
       _last = _first; // from here on, _last is only used as a temp var
       _first = _first->next;
