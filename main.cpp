@@ -2,7 +2,7 @@
 #include "compositeJourney.h"
 #include "simpleJourney.h"
 #include <iostream>
-#include <ostream>
+#include <cstring>
 
 using namespace std;
 
@@ -27,8 +27,9 @@ int main() {
     cout << "|______________________________________|" << endl << endl;
 
     char actionNumber;
-    cout << ">     Select an action number : " << endl;
+    cout << ">     Select an action number : ";
     cin >> actionNumber;
+    cout << endl;
 
     char start[100], end[100], transportMethod[100];
 
@@ -42,7 +43,7 @@ int main() {
       cout << ">       Arrival : ";
       cin >> end;
 
-      cout << "> Transport : ";
+      cout << ">     Transport : ";
       cin >> transportMethod;
 
       catalog.Add(new SimpleJourney(start, end, transportMethod));
@@ -52,17 +53,42 @@ int main() {
     case '2': {
       cout << "\nInsert the Composite Journey step by step." << endl;
       CompositeJourney *pcompositeJourney = new CompositeJourney;
+      unsigned int nbSegment = 0;
 
       do {
+        
+        nbSegment++;
 
-        cout << "\n>     Departure of this segment of journey: ";
-        cin >> start;
+        if (nbSegment >= 2){
 
-        cout << ">       Arrival of this segment of journey: ";
-        cin >> end;
+          strcpy(start, end);
 
-        cout << "> Transport : ";
-        cin >> transportMethod;
+          if (nbSegment == 2){
+            cout << "\n> Arrival of the second segment of journey : ";
+            cin >> end;
+            cout << ">                                Transport : ";
+            cin >> transportMethod;
+          } else if (nbSegment == 3){
+            cout << "\n>  Arrival of the third segment of journey : ";
+            cin >> end;
+            cout << ">                                Transport : ";
+            cin >> transportMethod;
+          } else {
+            cout << "\n>    Arrival of the " << nbSegment << "th segment of journey : ";
+            cin >> end;
+            cout << ">                                Transport : ";
+            cin >> transportMethod;
+          }
+
+        } else {
+
+          cout << "\n>     Departure of this segment of journey : ";
+          cin >> start;
+          cout << ">       Arrival of this segment of journey : ";
+          cin >> end;
+          cout << ">                                Transport : ";
+          cin >> transportMethod;
+        }
 
         pcompositeJourney->Add(new SimpleJourney(start, end, transportMethod));
 
