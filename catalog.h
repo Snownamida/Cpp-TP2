@@ -6,8 +6,7 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <Catalog> (fichier catalog.h)
-//----------------
+//---------- Interface de la classe <Catalog> (fichier catalog.h) ----------------
 #ifndef CATALOG_H_
 #define CATALOG_H_
 
