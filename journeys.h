@@ -14,6 +14,14 @@
 #include "journey.h"
 #include "linkedList.h"
 
+//------------------------------------------------------------------------
+// Rôle de la classe <journeys>
+//
+// This class represents a list of journeys.
+// It is used to store all the journeys in a linked list.
+//
+//------------------------------------------------------------------------
+
 class Journeys {
   //----------------------------------------------------------------- PUBLIC
 

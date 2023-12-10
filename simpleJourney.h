@@ -1,5 +1,5 @@
 /*************************************************************************
-                           SimpleJourney  -  description
+                           simpleJourney
                              -------------------
     début                : 27/11/2023
     copyright            : (C) 2023 par Jixiang, Adam, Clément, Louis
@@ -13,6 +13,14 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "journey.h"
+
+//------------------------------------------------------------------------
+// Rôle de la classe <simpleJourney>
+//
+// This class represents a simpleJourney.
+// It is used to store a journey that is composed of a start, an end and a transportMethod.
+//
+//------------------------------------------------------------------------
 
 class SimpleJourney : public Journey {
 //----------------------------------------------------------------- PUBLIC

@@ -22,6 +22,14 @@ template <typename T> struct Node
   Node<T> *next;
 };
 
+//------------------------------------------------------------------------
+// Rôle de la classe <linkedList>
+//
+// This class represents a linkedList.
+// It is used to store a linkedList of data which are the journeys
+//
+//------------------------------------------------------------------------
+
 template <typename T>
 class LinkedList {
 //----------------------------------------------------------------- PUBLIC

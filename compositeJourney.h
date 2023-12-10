@@ -15,6 +15,14 @@
 #include "journey.h"
 #include "journeys.h"
 
+//------------------------------------------------------------------------
+// Rôle de la classe <compositeJourney>
+//
+// This class represents a compositeJourney.
+// It is used to store a journey that is composed of other journeys.
+//
+//------------------------------------------------------------------------
+
 class CompositeJourney : public Journey, public Journeys {
 //----------------------------------------------------------------- PUBLIC
 

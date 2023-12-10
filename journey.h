@@ -15,6 +15,14 @@
 #include <cstring>
 #include <iostream>
 
+//------------------------------------------------------------------------
+// Rôle de la classe <journey>
+//
+// This class represents a journey.
+// It is used to store a journey by storing the start and the end of the journey.
+//
+//------------------------------------------------------------------------
+
 class Journey {
 //----------------------------------------------------------------- PUBLIC
 
@@ -55,6 +63,11 @@ protected:
 private:
 //----------------------------------------------------- Méthodes privées
   virtual void show(void) const;
+  // Mode d'emploi :
+  // This function will print the journey in the standard output.
+  // The format depends on the type of the journey (virtual method).
+  // Contrat :
+  // The journey must be a valid journey.
 };
 
 #endif

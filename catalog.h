@@ -26,9 +26,17 @@ struct PathNode {
 
   // Methods :
   // Constructor that takes two parameters
-  PathNode(Journey *journey, PathNode *lastNode)
-      : pjourney(journey), lastPathNode(lastNode) {}
+  PathNode(Journey *journey, PathNode *lastNode) : pjourney(journey), lastPathNode(lastNode) {}
 };
+
+//------------------------------------------------------------------------
+// Rôle de la classe <Catalog>
+//
+// This class represents a catalog of journeys.
+// It is a linked list of journeys.
+// It is used to store all the journeys and to search for journeys.
+//
+//------------------------------------------------------------------------
 
 class Catalog : public Journeys {
 //----------------------------------------------------------------- PUBLIC
