@@ -15,26 +15,32 @@
 #include "journey.h"
 
 class SimpleJourney : public Journey {
-  //----------------------------------------------------------------- PUBLIC
+//----------------------------------------------------------------- PUBLIC
 
 public:
-  //-------------------------------------------- Constructeurs - destructeur
-  SimpleJourney(const char *start = "", const char *end = "",
-                const char *transportMethod = "");
+//-------------------------------------------- Constructeurs - destructeur
+  SimpleJourney(const char *start = "", const char *end = "", const char *transportMethod = "");
+  // Mode d'emploi :
+  // This function will create a simpleJourney with the given start, end and transportMethod.
+  // start : the start of the simpleJourney
+  // end : the end of the simpleJourney
+  // transportMethod : the transportMethod of the simpleJourney
+  // Contrat :
+  // The start, end and transportMethod must be valid strings.
 
   virtual ~SimpleJourney();
 
-  //-------------------------------------------------------------- PROTECTED
+//-------------------------------------------------------------- PROTECTED
 
 protected:
-  //----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs protégés
 
   const char *_transportMethod;
 
-  //------------------------------------------------------------------ PRIVE
+//------------------------------------------------------------------ PRIVE
 
 private:
-  //------------------------------------------------------- Méthodes privées
+//------------------------------------------------------- Méthodes privées
 
   void show(void) const;
 };
