@@ -6,8 +6,7 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <compositeJourney> (fichier
-//compositeJourney.h) ----------------
+//---------- Interface de la classe <compositeJourney> (fichier compositeJourney.h) ----------------
 
 #ifndef COMPOSITEJOURNEY_H_
 #define COMPOSITEJOURNEY_H_
@@ -17,32 +16,39 @@
 #include "journeys.h"
 
 class CompositeJourney : public Journey, public Journeys {
-  //----------------------------------------------------------------- PUBLIC
+//----------------------------------------------------------------- PUBLIC
 
 public:
-  //----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Méthodes publiques
 
   int Add(Journey *journey, bool check = true);
   // Mode d'emploi :
-  // return value
-  // 0  OK
-  // -1 _to of the last journey != _from of the journey to Add
 
-  // important:should pass a new Journey* object,
-  // CompositeJourney will make the GC for it
+  // This function will add a journey to the compositeJourney.
+  // journey : the journey to add
+  // check : if check is true, the function will check if the journey can be
+  // added to the compositeJourney. If check is false, the function will not
+  // check if the journey can be added to the compositeJourney.
+  
+  // Contrat :
 
-  // check is used to check if the journeys is continuous.
+  // The journey must be a valid journey.
+  // The journey must be a journey that can be added to the compositeJourney.
+  // The journey must not be a journey that is already in the compositeJourney.
 
-  // we need to redifine << here because it exist in both Journey and Journeys
 
-  //------------------------------------------------- Surcharge d'opérateurs
-  friend std::ostream &operator<<(std::ostream &os,
-                                  const CompositeJourney &compositeJourney);
+//------------------------------------------------- Surcharge d'opérateurs
 
-  //------------------------------------------------------------------ PRIVE
+  friend std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney);
+  // Mode d'emploi :
+  // This function will print the catalog in the given ostream.
+  // os : the ostream where the catalog will be printed
+  // compositeJourney : the compositeJourney that will be printed
+
+//------------------------------------------------------------------ PRIVE
 
 private:
-  //----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Méthodes protégées
   void show(void) const;
 };
 
