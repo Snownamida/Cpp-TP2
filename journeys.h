@@ -6,8 +6,7 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <journeys> (fichier journeys.h)
-//----------------
+//---------- Interface de la classe <journeys> (fichier journeys.h) ----------------
 #ifndef JOURNEYS_H_
 #define JOURNEYS_H_
 
@@ -22,7 +21,11 @@ public:
   //----------------------------------------------------- Méthodes publiques
 
   void Add(Journey *pjourney)
-  // important:should pass a new Journey* object,
+  // Mode d'emploi :
+  // This function will add a journey to the journeys.
+  // pjourney : the journey to add
+  // Contrat :
+  // important : should pass a new Journey* object,
   // Journeys will make the GC for it
   {
     journeyLinkedList.Add(pjourney);
@@ -33,6 +36,8 @@ public:
 
   //----------------------------------------------------- Attributs publics
   unsigned int refCount = 0;
+  // Attribute that is public because it is used by the catalog to know if a journey is still used or not
+
 
 protected:
   //----------------------------------------------------- Méthodes protégées
