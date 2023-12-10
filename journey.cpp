@@ -23,7 +23,7 @@ Journey::~Journey()
 // Using free instead of delete because the string was created with strdup(),
 // which require a free
 {
-#ifdef TRACE_ENABLED
+#ifdef MAP
   std::cout << "Destructor called for <Journey>" << std::endl;
 #endif
   free((char *)_from);

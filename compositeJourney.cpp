@@ -57,7 +57,6 @@ int CompositeJourney::Add(Journey *pjourney, bool check)
   Journeys::Add(pjourney);
   // Using free instead of delete because the string was created with strdup(),
   // which require a free
-
   free((char *)_to);
   _to = strdup(pjourney->GetTo());
   return 0;

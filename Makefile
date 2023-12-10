@@ -1,5 +1,5 @@
 CC = g++ # c++
-CFLAGS = -ansi -pedantic -Wall -std=c++11 -g # -D TRACE_ENABLED
+CFLAGS = -ansi -pedantic -Wall -std=c++11 -g # -D MAP
 TARGET = trajets
 SRCS = main.cpp journey.cpp simpleJourney.cpp journeys.cpp compositeJourney.cpp catalog.cpp
 OBJS = $(SRCS:.cpp=.o)

@@ -46,7 +46,7 @@ public:
   // Contrat :
   // The start and end must be valid strings.
   {
-#ifdef TRACE_ENABLED
+#ifdef MAP
     std::cout << "Constructor called for <Journey>" << std::endl;
 #endif
   }
