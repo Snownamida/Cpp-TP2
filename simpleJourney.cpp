@@ -27,8 +27,7 @@ void SimpleJourney::show(void) const
 
 //-------------------------------------------- Constructeurs - destructeur
 
-SimpleJourney::SimpleJourney(const char *start, const char *end,
-                             const char *transportMethod)
+SimpleJourney::SimpleJourney(const char *start, const char *end, const char *transportMethod)
     : Journey(start, end), _transportMethod(strdup(transportMethod)) {
 #ifdef TRACE_ENABLED
   std::cout << "Constructor called for <SimpleJourney>" << std::endl;
