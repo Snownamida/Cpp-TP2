@@ -29,6 +29,10 @@ int CompositeJourney::Add(Journey *pjourney, bool check)
 // If the list is not empty, check if the journey can be added to the list
 //    If the journey can be added to the list, add it to the list and update _to
 //    If the journey can't be added to the list, delete it and return -1
+// important : should pass a new Journey* object,
+// CompositeJourney will make the GC for it
+// check is used to check if the journeys is continuous.
+// we need to redifine << here because it exist in both Journey and Journeys
 {
   if (!journeyLinkedList.GetFirst()) {
 
