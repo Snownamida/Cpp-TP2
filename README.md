@@ -15,4 +15,4 @@ make
 
 ### Graphe d'héritage
 
-![''](Graphe/héritage.svg "Graphe d'héritage")
+![''](架构图/héritage.svg "Graphe d'héritage")
