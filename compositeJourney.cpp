@@ -6,8 +6,7 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Réalisation de la classe <compositeJourney> (fichier
-// compositeJourney.cpp) ----------------
+//---------- Réalisation de la classe <compositeJourney> (fichier compositeJourney.cpp) ----------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -17,13 +16,20 @@
 #include <ostream>
 using std::ostream;
 using std::strcmp;
+
 //------------------------------------------------------ Include personnel
 #include "compositeJourney.h"
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-int CompositeJourney::Add(Journey *pjourney, bool check) {
+int CompositeJourney::Add(Journey *pjourney, bool check) 
+// Algorithme :
+// If the list is empty, add the journey to the list and update _from and _to
+// If the list is not empty, check if the journey can be added to the list
+//    If the journey can be added to the list, add it to the list and update _to
+//    If the journey can't be added to the list, delete it and return -1
+{
   if (!journeyLinkedList.GetFirst()) {
 
     Journeys::Add(pjourney);
@@ -54,8 +60,7 @@ int CompositeJourney::Add(Journey *pjourney, bool check) {
 } //----- Fin de Add
 
 //------------------------------------------------- Surcharge d'opérateurs
-std::ostream &operator<<(std::ostream &os,
-                         const CompositeJourney &compositeJourney) {
+std::ostream &operator<<(std::ostream &os, const CompositeJourney &compositeJourney) {
   compositeJourney.show();
   return os;
 } //----- Fin de operator <<
