@@ -23,10 +23,10 @@
 //------------------------------------------------------------------------
 
 class Journeys {
-  //----------------------------------------------------------------- PUBLIC
+//----------------------------------------------------------------- PUBLIC
 
 public:
-  //----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Méthodes publiques
 
   void Add(Journey *pjourney)
   // Mode d'emploi :
@@ -39,16 +39,16 @@ public:
     journeyLinkedList.Add(pjourney);
   }
 
-  //------------------------------------------------- Surcharge d'opérateurs
+//------------------------------------------------- Surcharge d'opérateurs
   friend std::ostream &operator<<(std::ostream &os, const Journeys &journeys);
 
-  //----------------------------------------------------- Attributs publics
+//----------------------------------------------------- Attributs publics
   unsigned int refCount = 0;
   // Attribute that is public because it is used by the catalog to know if a journey is still used or not
 
 
 protected:
-  //----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Méthodes protégées
   void show(const char sep = '|') const;
 
   //----------------------------------------------------- Attributs protégés
