@@ -1,5 +1,5 @@
 CC = g++ # c++
-CFLAGS = -ansi -pedantic -Wall -std=c++11 -g #  
+CFLAGS = -ansi -pedantic -Wall -std=c++11 -g # -D TRACE_ENABLED
 TARGET = trajets
 SRCS = main.cpp journey.cpp simpleJourney.cpp journeys.cpp compositeJourney.cpp catalog.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -21,7 +21,7 @@ $(TEST): $(TESTOBJS)
 journey.o: journey.h
 simpleJourney.o: simpleJourney.h
 compositeJourney.o: compositeJourney.h
-journeys.o: journeys.h
+journeys.o: journeys.h linkedList.h
 catalog.o: catalog.h
 
 .PHONY: clean

@@ -17,7 +17,7 @@
 
 //----------------------------------------------------- Méthodes publiques
 
-void SimpleJourney::show(void) const 
+void SimpleJourney::show(void) const
 // Algorithme :
 // Show the journey
 // The format is : from --(transportMethod)-> to
@@ -27,15 +27,22 @@ void SimpleJourney::show(void) const
 
 //-------------------------------------------- Constructeurs - destructeur
 
-SimpleJourney::SimpleJourney(const char *start, const char *end, const char *transportMethod) 
-                              : Journey(start, end), _transportMethod(strdup(transportMethod)) {}
+SimpleJourney::SimpleJourney(const char *start, const char *end,
+                             const char *transportMethod)
+    : Journey(start, end), _transportMethod(strdup(transportMethod)) {
+#ifdef TRACE_ENABLED
+  std::cout << "Constructor called for <SimpleJourney>" << std::endl;
+#endif
+}
 
-
-SimpleJourney::~SimpleJourney() 
+SimpleJourney::~SimpleJourney()
 // Algorithme :
 // Free the memory allocated by strdup()
 // Using free instead of delete because the string was created with strdup(),
 // which require a free
 {
+#ifdef TRACE_ENABLED
+  std::cout << "Destructor called for <SimpleJourney>" << std::endl;
+#endif
   free((char *)_transportMethod);
 } //----- Fin de ~SimpleJourney

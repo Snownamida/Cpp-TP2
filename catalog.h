@@ -6,7 +6,8 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <Catalog> (fichier catalog.h) ----------------
+//---------- Interface de la classe <Catalog> (fichier catalog.h)
+//----------------
 #ifndef CATALOG_H_
 #define CATALOG_H_
 
@@ -18,7 +19,8 @@ struct PathNode {
   // The journey that this pathNode represents
   // The last pathNode of the path to this journey
   // The next pathNodes of the path to this journey
-  // The number of references to this pathNode (used to know if the pathNode is still used or not and if it can be deleted or not)
+  // The number of references to this pathNode (used to know if the pathNode is
+  // still used or not and if it can be deleted or not)
   Journey *pjourney;
   PathNode *lastPathNode;
   LinkedList<PathNode> nextPathNodes;
@@ -26,7 +28,8 @@ struct PathNode {
 
   // Methods :
   // Constructor that takes two parameters
-  PathNode(Journey *journey, PathNode *lastNode) : pjourney(journey), lastPathNode(lastNode) {}
+  PathNode(Journey *journey, PathNode *lastNode)
+      : pjourney(journey), lastPathNode(lastNode) {}
 };
 
 //------------------------------------------------------------------------
@@ -39,10 +42,10 @@ struct PathNode {
 //------------------------------------------------------------------------
 
 class Catalog : public Journeys {
-//----------------------------------------------------------------- PUBLIC
+  //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
+  //----------------------------------------------------- Méthodes publiques
 
   void Search(const char *const from, const char *const to,
               PathNode *pathHead = nullptr);
@@ -62,8 +65,7 @@ public:
   // The pathNode must be the pathNode of the journey that is currently
   // being searched.
 
-
-//------------------------------------------------- Surcharge d'opérateurs
+  //------------------------------------------------- Surcharge d'opérateurs
 
   friend std::ostream &operator<<(std::ostream &os, const Catalog &Catalog);
   // Mode d'emploi :
@@ -71,13 +73,12 @@ public:
   // os : the ostream where the catalog will be printed
   // Catalog : the catalog that will be printed
 
-//------------------------------------------------------------------ PRIVE
+  //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Attributs protégés
+  //----------------------------------------------------- Attributs protégés
 
   PathNode pathRoot{nullptr, nullptr};
-  
 };
 
 #endif

@@ -17,12 +17,15 @@ using std::ostream;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-Journey::~Journey() 
+Journey::~Journey()
 // Algorithme :
 // Free the memory allocated by strdup()
 // Using free instead of delete because the string was created with strdup(),
 // which require a free
 {
+#ifdef TRACE_ENABLED
+  std::cout << "Destructor called for <Journey>" << std::endl;
+#endif
   free((char *)_from);
   free((char *)_to);
 } //----- Fin de ~Journey
