@@ -6,29 +6,48 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Interface de la classe <linkedList> (fichier linkedList.h)
-//----------------
+//---------- Interface de la classe <linkedList> (fichier linkedList.h) ----------------
 
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
 
 //------------------------------------------------------------------ Types
-template <typename T> struct Node {
+template <typename T> struct Node 
+// Node of the linkedList
+// T : the type of the data that the node will contain
+// pdata : the data that the node will contain
+// next : the next node of the linkedList
+{
   T *pdata;
   Node<T> *next;
 };
-template <typename T>
 
+template <typename T>
 class LinkedList {
-  //----------------------------------------------------------------- PUBLIC
+//----------------------------------------------------------------- PUBLIC
 
 public:
-  //----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- Méthodes publiques
 
   void Add(T *pdata, bool AddToEnd = true)
+
+  // Mode d'emploi :
+
+  // This function will add a data to the linkedList.
+  // pdata : the data to add
+  // AddToEnd : if AddToEnd is true, the data will be added to the end of the linkedList.
+
+  // Contrat :
+
   // important:should pass a new Journey* object,
   // LinkedList will make the GC for it
   // data should have a refCount
+
+  // Algorithme :
+
+  // If the linkedList is empty, add the data to the linkedList and update _first and _last
+  // If the linkedList is not empty, add the data to the linkedList and update _first
+  // or _last depending on the value of AddToEnd
   {
     Node<T> *node = new Node<T>{pdata, nullptr};
     pdata->refCount++;
@@ -51,8 +70,14 @@ public:
 
   Node<T> *GetLast(void) const { return _last; }
 
-  //-------------------------------------------- Constructeurs - destructeur
-  virtual ~LinkedList() {
+//-------------------------------------------- Constructeurs - destructeur
+  virtual ~LinkedList() 
+  // Algorithme :
+  // Delete all the nodes of the linkedList
+  // While there is a first node, delete the first node
+  // RefCount is used to know if the data is still used or not
+  // If the data is not used anymore, delete it
+  {
     while (_first) {
       _last = _first; // from here on, _last is only used as a temp var
       _first = _first->next;
@@ -66,13 +91,15 @@ public:
     }
   }
 
-  //----------------------------------------------------- Attributs publics
+//----------------------------------------------------- Attributs publics
   unsigned int refCount = 0;
+  // Attribute that is public because it is used by the catalog to know if a journey is still used or not
+
 
 protected:
-  //------------------------------------------------------------------ PRIVE
+//------------------------------------------------------------------ PRIVE
 
-  //----------------------------------------------------- Attributs protégés
+//----------------------------------------------------- Attributs protégés
   Node<T> *_first = nullptr;
   Node<T> *_last = nullptr;
 };
