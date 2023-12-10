@@ -6,8 +6,7 @@
     binome               : B3311 et B3309
 *************************************************************************/
 
-//---------- Réalisation de la classe <Catalog> (fichier Catalog.cpp)
-//------------
+//---------- Réalisation de la classe <Catalog> (fichier Catalog.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -24,7 +23,9 @@ using std::ostream;
 //----------------------------------------------------- Méthodes publiques
 void Catalog::Search(const char *const from, const char *const to,
                      PathNode *pathNode)
-// A DFS Search
+
+// Algorithme :
+// A DFS Search is used to find all the possible journeys.
 {
   if (!strcmp(from, to)) {
     LinkedList<Journey> path;
